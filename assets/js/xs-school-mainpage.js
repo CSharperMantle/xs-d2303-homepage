@@ -65,13 +65,13 @@
       false, null, null)
     })
     .then(() => {
-      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@master/assets/js/CustomEase-3.5.1.min.js', body, () => {
+      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/CustomEase-3.5.1.min.js', body, () => {
         return (typeof CustomEase !== 'undefined')
       },
       false, null, null)
     })
     .then(() => {
-      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@master/assets/js/CustomWiggle-3.4.3.min.js', body, () => {
+      return AsyncScriptLoader.loadScript('https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/CustomWiggle-3.4.3.min.js', body, () => {
         return (typeof CustomWiggle !== 'undefined')
       },
       false, null, null)
@@ -95,8 +95,8 @@ const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
 const ELEMID_H2_DEPRECATED_BANNER = 'h2-deprecated-banner'
 const ELEMID_SCRIPT_ASTEROID = 'script-asteroid'
 const ELEMID_SPAN_RANDOM_QUOTE = 'span-random-quote'
-const SRC_SCRIPT_ASTEROID = 'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@master/assets/js/asteroids.js'
-const SRC_TXT_FORTUNE = 'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@master/assets/txt/fortunes.txt'
+const SRC_SCRIPT_ASTEROID = 'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/asteroids.js'
+const SRC_TXT_FORTUNE = 'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/txt/fortunes.txt'
 let isDeprecatedBannerShowing = false
 
 // click-switching images
