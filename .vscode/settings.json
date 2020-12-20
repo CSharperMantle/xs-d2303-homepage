@@ -1,0 +1,25 @@
+{
+    "cSpell.words": [
+        "afterbegin",
+        "beforeend",
+        "consts",
+        "crossorigin",
+        "csharpermantle",
+        "elemid",
+        "gsap",
+        "iaoshi",
+        "mainpage",
+        "opac",
+        "prefill",
+        "switchable",
+        "switchables",
+        "xiaoshi"
+    ],
+    "eslint.options": {
+        "configFile": ".eslintrc.js"
+    },
+    "eslint.validate": [
+        "javascript",
+        "html"
+    ]
+}

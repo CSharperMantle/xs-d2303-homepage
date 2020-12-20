@@ -1,0 +1,38 @@
+{
+  "name": "xs-d2303-homepage",
+  "version": "1.0.0",
+  "description": "class homepage",
+  "main": "src/xiaoshi-class/index.html",
+  "dependencies": {
+    "@types/gsap": "^1.20.2",
+    "@types/jquery": "^3.5.4",
+    "gsap": "^3.5.1",
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-standard": "^15.0.1",
+    "eslint-plugin-html": "^6.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CSharperMantle/xs-d2303-homepage.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "CSharperMantle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CSharperMantle/xs-d2303-homepage/issues"
+  },
+  "homepage": "https://github.com/CSharperMantle/xs-d2303-homepage#readme"
+}
