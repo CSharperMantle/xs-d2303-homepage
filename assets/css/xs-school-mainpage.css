@@ -196,6 +196,7 @@
 /* random number generator */
 #div-randnum-wrapper {
     background-color: #c6eae3;
+    padding: 10px;
 }
 
 #div-randnum-result {
@@ -207,4 +208,8 @@
     display: flex;
     align-content: center;
     justify-content: space-between;
+}
+
+#form-randnum-control-wrapper>button {
+    border-radius: 5px;
 }
