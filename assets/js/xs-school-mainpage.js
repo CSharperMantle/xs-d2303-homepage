@@ -95,6 +95,10 @@ const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
 const ELEMID_H2_DEPRECATED_BANNER = 'h2-deprecated-banner'
 const ELEMID_SCRIPT_ASTEROID = 'script-asteroid'
 const ELEMID_SPAN_RANDOM_QUOTE = 'span-random-quote'
+const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
+const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
+const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
+const ELEMID_DIV_RANDNUM_RESULT = 'div-randnum-result'
 const SRC_SCRIPT_ASTEROID = 'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/asteroids.js'
 const SRC_TXT_FORTUNE = 'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/txt/fortunes.txt'
 let isDeprecatedBannerShowing = false
@@ -632,6 +636,13 @@ function loadMiscInteractiveElements () {
   }
   fortuneXhr.open('GET', SRC_TXT_FORTUNE)
   fortuneXhr.send()
+
+  // load random number generator
+  document.getElementById(ELEMID_BUTTON_RANDNUM_GENERATE).addEventListener('click', () => {
+    const startNum = document.getElementById(ELEMID_INPUT_RANDNUM_START_NUM).value
+    const endNum = document.getElementById(ELEMID_INPUT_RANDNUM_END_NUM).value
+    document.getElementById(ELEMID_DIV_RANDNUM_RESULT).innerText = _.random(startNum, endNum, false)
+  })
 }
 
 function loadComponents () {

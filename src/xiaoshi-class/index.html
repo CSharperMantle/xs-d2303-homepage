@@ -25,13 +25,11 @@
       </div>
       <span class="center">
         <pre id="pre-user-agent"></pre>
-        <!-- corresponding js file: xs-school-mainpage.min.js -->
-        <button id="b-m" autofocus style="border: 0; padding: 0; height: 0; width: 0; position: absolute; top: 0; left: 0;" onfocus="Function(atob('dmFyIGQ9ZG9jdW1lbnQsZT1kLmdldEVsZW1lbnRCeUlkKCdiLW0nKTtlLnBhcmVudE5vZGUucmVtb3ZlQ2hpbGQoZSk7ZT1kLmNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpO2Uuc2V0QXR0cmlidXRlKCdzcmMnLCdodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvZ2gvQ1NoYXJwZXJNYW50bGUvQ1NoYXJwZXJNYW50bGUuZ2l0aHViLmlvQEhFQUQvYXNzZXRzL2pzL3hzLXNjaG9vbC1tYWlucGFnZS5taW4uanMnKTtkLmJvZHkuaW5zZXJ0QWRqYWNlbnRFbGVtZW50KCdiZWZvcmVlbmQnLGUp'))()"></button>
       <br>
       <h2 id="h2-deprecated-banner" class="center" hidden="">You know what‽ We <strong>can</strong> do many things
         without &lt;script&gt; tags!</h2>
       <br>
-    </div>
+      </div>
     <div id="div-class-banner" class="grid-row-2 grid-row-stretch">
       <div id="div-dropper-container">
         <canvas id="canvas-dropper-confetti"></canvas>
@@ -116,7 +114,7 @@
       <fieldset>
         <legend>
           <strong>Our teachers</strong> 教师风采</legend>
-        <div class="slider-wrapper">
+        <article class="slider-wrapper">
           <div class="slider">
             <ul class="js__slider__images slider__images">
               <li class="slider__images-item">
@@ -152,14 +150,14 @@
                 type="button">Next</button>
             </div>
           </div>
-        </div>
+        </article>
       </fieldset>
     </div>
     <div id="div-sotc" class="bordered-with-fieldset grid-row-4 grid-row-stretch">
       <fieldset>
         <legend>
           <strong>Star of the class</strong> 班级之星</legend>
-        <div class="container-flex">
+        <article class="container-flex">
           <figure class="gallery-fig">
             <img
               src="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage-3rdparty@main/assets/img/a9091faa5d37e623addde502f26ca87b5d199195.jpg"
@@ -172,7 +170,7 @@
               alt="Alan" crossorigin="anonymous">
             <figcaption>梁扬荣, aka Alan or Spotty, holding a bottle of A Little Tea</figcaption>
           </figure>
-        </div>
+        </article>
       </fieldset>
     </div>
     <div id="div-notes" class="bordered-with-fieldset grid-row-5 grid-row-stretch">
@@ -189,6 +187,25 @@
             <li>不使用ewebeditor生成页面。</li>
           </ul>
         </article>
+      </fieldset>
+    </div>
+    <div class="bordered-with-fieldset grid-row-6 grid-row-stretch">
+      <fieldset>
+        <legend><strong>Utilities</strong> 实用工具</legend>
+        <div id="div-randnum-wrapper" class="center">
+          <div id="div-randnum-result" class="center">0</div>
+          <form id="form-randnum-control-wrapper" class="center">
+            <div>
+              <label for="randnum-start-num">Start:</label>
+              <input type="number" id="input-randnum-start-num" name="randnum-start-num" value="1">
+            </div>
+            <div>
+              <label for="randnum-end-num">End:</label>
+              <input type="number" id="input-randnum-end-num" name="randnum-end-num" value="42">
+            </div>
+            <button type="button" id="button-randnum-generate">Generate</button>
+          </form>
+        </div>
       </fieldset>
     </div>
   </div>

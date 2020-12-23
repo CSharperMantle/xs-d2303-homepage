@@ -1,3 +1,7 @@
+.grid-row-6 {
+    grid-row: 6;
+}
+
 .container-grid-two-columns {
     grid-template-columns: repeat(2, 1fr);
 }
@@ -187,4 +191,20 @@
     height: 100%;
     pointer-events: none;
     z-index: 10;
+}
+
+/* random number generator */
+#div-randnum-wrapper {
+    background-color: #c6eae3;
+}
+
+#div-randnum-result {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+}
+
+#form-randnum-control-wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
 }
