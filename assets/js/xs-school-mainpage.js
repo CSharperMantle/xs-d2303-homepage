@@ -654,20 +654,22 @@ function loadMiscInteractiveElements () {
   })
   function snowFrame () {
     const skew = Math.max(0.8, SNOWFLAKES_SKEW - 0.001)
-    snowInstance({
-      particleCount: 1,
-      startVelocity: 0,
-      ticks: _.random(100, 500),
-      gravity: 0.5,
-      origin: {
-        x: Math.random(),
-        // since particles fall down, skew start toward the top
-        y: (Math.random() * skew) - 0.2
-      },
-      colors: ['#ffffff'],
-      shapes: ['circle'],
-      scalar: _.random(0.4, 1, true)
-    })
+    for (let idx = 0; idx < 10; idx++) {
+      snowInstance({
+        particleCount: 1,
+        startVelocity: 0,
+        ticks: _.random(100, 500),
+        gravity: 0.5,
+        origin: {
+          x: Math.random(),
+          // since particles fall down, skew start toward the top
+          y: (Math.random() * skew) - 0.2
+        },
+        colors: ['#ffffff'],
+        shapes: ['circle'],
+        scalar: _.random(0.4, 1, true)
+      })
+    }
   }
   setInterval(snowFrame, 100)
 }
