@@ -6,6 +6,10 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
+#main-main {
+    position: relative;
+}
+
 #div-under-construction-banner {
     padding: 25px 20px 0 20px;
     background: #f1f1f1;
@@ -212,4 +216,16 @@
 
 #form-randnum-control-wrapper>button {
     border-radius: 5px;
+}
+
+/* snowflakes */
+#canvas-snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+
+    pointer-events: none;
 }
