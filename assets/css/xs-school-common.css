@@ -1,5 +1,10 @@
-@import url("https://use.sevencdn.com/css?family=Noto+Sans+SC:200,300,400,600,700");
-@import url("https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage-3rdparty@main/assets/font/NotoEmoji/NotoEmoji/NotoEmoji.min.css");
+@import url(https://use.sevencdn.com/css?family=Noto+Sans+SC:200,300,400,600,700);
+@import url(https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage-3rdparty@main/assets/font/NotoEmoji/NotoEmoji/NotoEmoji.min.css);
+
+/* Global fonts */
+body {
+    font-family: Arial, Helvetica, 'Noto Emoji', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+}
 
 .no-selection {
     user-select: none;
@@ -26,26 +31,25 @@ img {
     max-width: 740px;
 }
 
-/* Image tweaks */
-.img-grayscale-on-hover {
+img.img-grayscale-on-hover {
     filter: unset;
     transition: filter 0.2s linear;
 }
 
-.img-grayscale-on-hover:hover {
+img.img-grayscale-on-hover:hover {
     filter: grayscale(1);
 }
 
-.img-deblur-on-hover {
+img.img-deblur-on-hover {
     filter: blur(1rem);
     transition: filter 0.2s linear;
 }
 
-.img-deblur-on-hover:hover {
+img.img-deblur-on-hover:hover {
     filter: unset;
 }
 
-.img-brighter {
+img.img-brighter {
     filter: brightness(1.3);
 }
 
@@ -116,7 +120,7 @@ figure.gallery-fig>figcaption {
 
 /* Text */
 .text {
-    font-family: Arial, Helvetica, 'Microsoft YaHei', 'Noto Sans SC', 'Noto Emoji', sans-serif;
+    font-family: Arial, Helvetica, 'Noto Emoji', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
 }
 
 .text-small {
