@@ -1,3 +1,6 @@
+@import url("https://use.sevencdn.com/css?family=Noto+Sans+SC:200,300,400,600,700");
+@import url("https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage-3rdparty@main/assets/font/NotoEmoji/NotoEmoji/NotoEmoji.min.css");
+
 .no-selection {
     user-select: none;
     -webkit-user-select: none;
@@ -113,7 +116,7 @@ figure.gallery-fig>figcaption {
 
 /* Text */
 .text {
-    font-family: Arial, Helvetica, 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+    font-family: Arial, Helvetica, 'Microsoft YaHei', 'Noto Sans SC', 'Noto Emoji', sans-serif;
 }
 
 .text-small {
