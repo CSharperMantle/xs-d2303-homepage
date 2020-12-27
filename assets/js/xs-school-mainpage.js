@@ -99,12 +99,9 @@ const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
 const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
 const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
 const ELEMID_DIV_RANDNUM_RESULT = 'div-randnum-result'
-const ELEMID_CANVAS_SNOWFLAKES = 'canvas-snowflakes'
 const SRC_SCRIPT_ASTEROID = 'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/asteroids.js'
 const SRC_TXT_FORTUNE = 'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/txt/fortunes.txt'
 let isDeprecatedBannerShowing = false
-
-const SNOWFLAKES_SKEW = 1
 
 // click-switching images
 function loadSwitchableImg () {
@@ -648,30 +645,6 @@ function loadMiscInteractiveElements () {
   })
 
   // load snowflakes
-  const canvasSnow = document.getElementById(ELEMID_CANVAS_SNOWFLAKES)
-  const snowInstance = confetti.create(canvasSnow, {
-    resize: true
-  })
-  function snowFrame () {
-    const skew = Math.max(0.8, SNOWFLAKES_SKEW - 0.001)
-    for (let idx = 0; idx < 10; idx++) {
-      snowInstance({
-        particleCount: 1,
-        startVelocity: 0,
-        ticks: _.random(100, 500),
-        gravity: 0.5,
-        origin: {
-          x: Math.random(),
-          // since particles fall down, skew start toward the top
-          y: (Math.random() * skew) - 0.2
-        },
-        colors: ['#ffffff'],
-        shapes: ['circle'],
-        scalar: _.random(0.4, 1, true)
-      })
-    }
-  }
-  setInterval(snowFrame, 100)
 }
 
 function loadComponents () {
