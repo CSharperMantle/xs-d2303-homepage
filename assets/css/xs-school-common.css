@@ -33,6 +33,15 @@ img {
     filter: grayscale(1);
 }
 
+.img-deblur-on-hover {
+    filter: blur();
+    transition: filter 0.1s linear;
+}
+
+.img-deblur-on-hover:hover {
+    filter: unset;
+}
+
 .img-brighter {
     filter: brightness(1.3);
 }
