@@ -1,3 +1,8 @@
+/* Index emoji fix */
+#gallery-wrapper {
+    font-family: Arial, Helvetica, 'Noto Emoji', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+}
+
 .grid-row-6 {
     grid-row: 6;
 }
