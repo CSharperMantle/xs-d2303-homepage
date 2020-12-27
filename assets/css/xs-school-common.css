@@ -34,8 +34,8 @@ img {
 }
 
 .img-deblur-on-hover {
-    filter: blur();
-    transition: filter 0.1s linear;
+    filter: blur(1rem);
+    transition: filter 0.2s linear;
 }
 
 .img-deblur-on-hover:hover {
