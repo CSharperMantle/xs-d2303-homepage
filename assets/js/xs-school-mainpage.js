@@ -141,6 +141,7 @@
 const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
 const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
 const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
+const ELEMID_BUTTON_AIRPLANE = 'button-airplane'
 const ELEMID_SCRIPT_ASTEROID = 'script-asteroid'
 const ELEMID_SPAN_RANDOM_QUOTE = 'span-random-quote'
 const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
@@ -465,19 +466,25 @@ function loadHiddenPanel() {
       )
       if (isHiddenPanelShowing) {
         // hide
-        hiddenPanelElem.setAttribute('hidden', '')
+        hiddenPanelElem.style.display = 'none'
         isHiddenPanelShowing = false
-        const asteroidScript = document.getElementById(ELEMID_SCRIPT_ASTEROID)
-        document.body.removeChild(asteroidScript)
       } else {
         // show
-        hiddenPanelElem.removeAttribute('hidden')
+        hiddenPanelElem.style.display = 'grid'
         isHiddenPanelShowing = true
-        const asteroidScript = document.createElement('script')
+      }
+    })
+  document.getElementById(ELEMID_BUTTON_AIRPLANE)
+    .addEventListener('click', () => {
+      let asteroidScript = document.getElementById(ELEMID_SCRIPT_ASTEROID)
+      if (asteroidScript !== null) {
+        document.body.removeChild(asteroidScript)
+      } else {
+        asteroidScript = document.createElement('script')
         asteroidScript.type = 'text/javascript'
         asteroidScript.setAttribute('id', ELEMID_SCRIPT_ASTEROID)
-        document.body.appendChild(asteroidScript)
         asteroidScript.src = SRC_SCRIPT_ASTEROID
+        document.body.appendChild(asteroidScript)
       }
     })
 }
