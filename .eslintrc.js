@@ -11,6 +11,7 @@ module.exports = {
     ecmaVersion: 12
   },
   rules: {
+    'space-before-function-paren': 'off'
   },
   plugins: [
     'html',
