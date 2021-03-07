@@ -492,33 +492,7 @@ function loadHiddenPanel() {
     })
 
   document.getElementById(ELEMID_BUTTON_WELCOME_PRIDE)
-    .addEventListener('click', () => {
-      const canvas = document.getElementById(ELEMID_CONFETTI_OVERLAY)
-      canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: true })
-
-      const colors = ['#bb0000', '#ffffff']
-      if (!_.isNull(prideInterval)) {
-        clearInterval(prideInterval)
-        prideInterval = null
-      } else {
-        prideInterval = setInterval(() => {
-          canvas.confetti({
-            particleCount: 2,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 },
-            colors: colors
-          })
-          canvas.confetti({
-            particleCount: 2,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            colors: colors
-          })
-        }, 10)
-      }
-    })
+    .addEventListener('click', switchConfettiPride)
 }
 
 function loadFortune() {
@@ -549,10 +523,43 @@ function loadUtilities() {
     })
 }
 
+function switchConfettiPride() {
+  const canvas = document.getElementById(ELEMID_CONFETTI_OVERLAY)
+  canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: true })
+
+  const colors = ['#bb0000', '#ffffff']
+  if (!_.isNull(prideInterval)) {
+    clearInterval(prideInterval)
+    prideInterval = null
+  } else {
+    prideInterval = setInterval(() => {
+      canvas.confetti({
+        particleCount: 2,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors
+      })
+      canvas.confetti({
+        particleCount: 2,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors
+      })
+    }, 10)
+  }
+}
+
 function initializeComponents() {
   loadDropper()
   loadSwitchableImg()
   loadHiddenPanel()
   loadFortune()
   loadUtilities()
+
+  const now = new Date()
+  if (now.getFullYear() === 2021 && now.getMonth() === 2 && now.getDate() === 8) {
+    switchConfettiPride()
+  }
 }
