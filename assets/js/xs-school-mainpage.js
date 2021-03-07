@@ -26,7 +26,7 @@
  *  OTHER. Copyright 2020, GreenSock. All rights reserved. Subject to the terms at https://greensock.com/standard-license or for Club GreenSock members, the agreement issued with that membership.
  */
 
-;(function () {
+(function () {
   const AsyncScriptLoader = {
     loadScript: function (
       url,
@@ -142,6 +142,8 @@ const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
 const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
 const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
 const ELEMID_BUTTON_AIRPLANE = 'button-airplane'
+const ELEMID_CONFETTI_OVERLAY = 'canvas-confetti-overlay'
+const ELEMID_BUTTON_WELCOME_PRIDE = 'button-welcome-pride'
 const ELEMID_SCRIPT_ASTEROID = 'script-asteroid'
 const ELEMID_SPAN_RANDOM_QUOTE = 'span-random-quote'
 const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
@@ -153,6 +155,7 @@ const SRC_SCRIPT_ASTEROID =
 const SRC_TXT_FORTUNE =
   'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/txt/fortunes.txt'
 let isHiddenPanelShowing = false
+let prideInterval = null
 
 // click-switching images
 function loadSwitchableImg() {
@@ -485,6 +488,35 @@ function loadHiddenPanel() {
         asteroidScript.setAttribute('id', ELEMID_SCRIPT_ASTEROID)
         asteroidScript.src = SRC_SCRIPT_ASTEROID
         document.body.appendChild(asteroidScript)
+      }
+    })
+
+  document.getElementById(ELEMID_BUTTON_WELCOME_PRIDE)
+    .addEventListener('click', () => {
+      const canvas = document.getElementById(ELEMID_CONFETTI_OVERLAY)
+      canvas.confetti = canvas.confetti || confetti.create(canvas, { resize: true })
+
+      const colors = ['#bb0000', '#ffffff']
+      if (!_.isNull(prideInterval)) {
+        clearInterval(prideInterval)
+        prideInterval = null
+      } else {
+        prideInterval = setInterval(() => {
+          canvas.confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors
+          })
+          canvas.confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors
+          })
+        }, 10)
       }
     })
 }
