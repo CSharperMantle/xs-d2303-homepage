@@ -131,6 +131,18 @@
       )
     })
     .then(() => {
+      return AsyncScriptLoader.loadScript(
+        'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/ChemDoodleWeb.min.js',
+        body,
+        () => {
+          return typeof ChemDoodle !== 'undefined'
+        },
+        false,
+        null,
+        null
+      )
+    })
+    .then(() => {
       initializeComponents()
     })
     .catch((reason) => {
