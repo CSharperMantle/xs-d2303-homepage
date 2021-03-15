@@ -150,18 +150,19 @@
     })
 })()
 
-const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
-const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
-const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
 const ELEMID_BUTTON_AIRPLANE = 'button-airplane'
-const ELEMID_CONFETTI_OVERLAY = 'canvas-confetti-overlay'
+const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
 const ELEMID_BUTTON_WELCOME_PRIDE = 'button-welcome-pride'
+const ELEMID_BUTTON_ATOM_VIEWER = 'button-atom-viewer'
+const ELEMID_CONFETTI_OVERLAY = 'canvas-confetti-overlay'
+const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
+const ELEMID_DIV_RANDNUM_RESULT = 'div-randnum-result'
+const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
+const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
+const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
+const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
 const ELEMID_SCRIPT_ASTEROID = 'script-asteroid'
 const ELEMID_SPAN_RANDOM_QUOTE = 'span-random-quote'
-const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
-const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
-const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
-const ELEMID_DIV_RANDNUM_RESULT = 'div-randnum-result'
 const SRC_SCRIPT_ASTEROID =
   'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/asteroids.js'
 const SRC_TXT_FORTUNE =
