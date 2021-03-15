@@ -155,9 +155,12 @@ const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
 const ELEMID_BUTTON_WELCOME_PRIDE = 'button-welcome-pride'
 const ELEMID_BUTTON_ATOM_VIEWER = 'button-atom-viewer'
 const ELEMID_CONFETTI_OVERLAY = 'canvas-confetti-overlay'
+const ELEMID_DIV_ATOM_VIEWER_WRAPPER = 'div-atom-viewer-wrapper'
 const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
 const ELEMID_DIV_RANDNUM_RESULT = 'div-randnum-result'
 const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
+const ELEMID_INPUT_ATOM_VIEWER_REFRESH = 'input-atom-viewer-refresh'
+const ELEMID_INPUT_ATOM_VIEWER_SMILES = 'input-atom-viewer-smiles'
 const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
 const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
 const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
@@ -533,6 +536,45 @@ function loadUtilities() {
         endNum,
         false
       )
+    })
+
+  document
+    .getElementById(ELEMID_BUTTON_ATOM_VIEWER)
+    .addEventListener('click', () => {
+      const atomViewerWrapper = document.getElementById(ELEMID_DIV_ATOM_VIEWER_WRAPPER)
+      if (atomViewerWrapper.style.display === 'none') {
+        atomViewerWrapper.style.display = 'flex'
+      } else {
+        atomViewerWrapper.style.display = 'none'
+      }
+    })
+
+  const chemDoodleCanvas = new ChemDoodle.TransformCanvas('canvas-chemdoodle', 400, 400, true)
+  chemDoodleCanvas.styles.atoms_useJMOLColors = true
+  chemDoodleCanvas.styles.bonds_width_2D = 0.6
+  chemDoodleCanvas.styles.bonds_saturationWidthAbs_2D = 2.6
+  chemDoodleCanvas.styles.bonds_hashSpacing_2D = 2.5
+  chemDoodleCanvas.styles.atoms_font_size_2D = 10
+  chemDoodleCanvas.styles.atoms_font_families_2D = ['Helvetica', 'Arial', 'sans-serif']
+  chemDoodleCanvas.styles.atoms_displayTerminalCarbonLabels_2D = true
+  const caffeineMolFile =
+        'Molecule Name\n  CHEMDOOD08070920033D 0   0.00000     0.00000     0\n[Insert Comment Here]\n 14 15  0  0  0  0  0  0  0  0  1 V2000\n   -0.3318    2.0000    0.0000   O 0  0  0  1  0  0  0  0  0  0  0  0\n   -0.3318    1.0000    0.0000   C 0  0  0  1  0  0  0  0  0  0  0  0\n   -1.1980    0.5000    0.0000   N 0  0  0  1  0  0  0  0  0  0  0  0\n    0.5342    0.5000    0.0000   C 0  0  0  1  0  0  0  0  0  0  0  0\n   -1.1980   -0.5000    0.0000   C 0  0  0  1  0  0  0  0  0  0  0  0\n   -2.0640    1.0000    0.0000   C 0  0  0  4  0  0  0  0  0  0  0  0\n    1.4804    0.8047    0.0000   N 0  0  0  1  0  0  0  0  0  0  0  0\n    0.5342   -0.5000    0.0000   C 0  0  0  1  0  0  0  0  0  0  0  0\n   -2.0640   -1.0000    0.0000   O 0  0  0  1  0  0  0  0  0  0  0  0\n   -0.3318   -1.0000    0.0000   N 0  0  0  1  0  0  0  0  0  0  0  0\n    2.0640   -0.0000    0.0000   C 0  0  0  2  0  0  0  0  0  0  0  0\n    1.7910    1.7553    0.0000   C 0  0  0  4  0  0  0  0  0  0  0  0\n    1.4804   -0.8047    0.0000   N 0  0  0  1  0  0  0  0  0  0  0  0\n   -0.3318   -2.0000    0.0000   C 0  0  0  4  0  0  0  0  0  0  0  0\n  1  2  2  0  0  0  0\n  3  2  1  0  0  0  0\n  4  2  1  0  0  0  0\n  3  5  1  0  0  0  0\n  3  6  1  0  0  0  0\n  7  4  1  0  0  0  0\n  4  8  2  0  0  0  0\n  9  5  2  0  0  0  0\n 10  5  1  0  0  0  0\n 10  8  1  0  0  0  0\n  7 11  1  0  0  0  0\n  7 12  1  0  0  0  0\n 13  8  1  0  0  0  0\n 13 11  2  0  0  0  0\n 10 14  1  0  0  0  0\nM  END\n> <DATE>\n07-08-2009\n'
+  const caffeine = ChemDoodle.readMOL(caffeineMolFile)
+  caffeine.scaleToAverageBondLength(14.4)
+  chemDoodleCanvas.loadMolecule(caffeine)
+  chemDoodleCanvas.styles.scale = 2
+  chemDoodleCanvas.repaint()
+
+  function loadNewMol(mol) {
+    chemDoodleCanvas.loadMolecule(mol)
+    chemDoodleCanvas.repaint()
+  }
+
+  document.getElementById(ELEMID_INPUT_ATOM_VIEWER_REFRESH)
+    .addEventListener('click', () => {
+      ChemDoodle.iChemLabs.readSMILES(document.getElementById(ELEMID_INPUT_ATOM_VIEWER_SMILES).value, {}, function(mol) {
+        loadNewMol(mol)
+      })
     })
 }
 

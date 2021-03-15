@@ -242,3 +242,9 @@
     z-index: 2;
     pointer-events: none;
 }
+
+#div-atom-viewer-wrapper {
+    display: none;
+    /* display: flex; */
+    flex-flow: column wrap;
+}

@@ -24,6 +24,7 @@ module.exports = {
     CustomWiggle: 'readonly',
     AsyncScriptLoader: 'readonly',
     confetti: 'readonly',
-    _: 'readonly'
+    _: 'readonly',
+    ChemDoodle: 'readonly'
   }
 }
