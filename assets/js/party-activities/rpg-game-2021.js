@@ -87,7 +87,7 @@
 })()
 
 function initializeComponents() {
-  const tl = gsap.timeline();
+  const tl = gsap.timeline()
 
   tl.from('.text-place', {
     opacity: 0,
