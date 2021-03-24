@@ -86,6 +86,9 @@
     })
 })()
 
+let isTextShowing = false
+let onShowTextPanelSelector = ''
+
 function initializeComponents() {
   const tl = gsap.timeline()
 
@@ -105,4 +108,61 @@ function initializeComponents() {
     stagger: 0.2,
     ease: 'power2'
   })
+
+  const dots = document.getElementsByClassName('dot')
+  for (let i = 0; i < dots.length; i++) {
+    const elem = dots[i]
+    elem.addEventListener('click', () => {
+      showText(elem.id)
+    })
+  }
+
+  function showText(id) {
+    const textPanelSelector = '#g-text-' + id.substr(-2)
+
+    if (onShowTextPanelSelector === textPanelSelector) {
+      gsap.to('#rect-text-background', {
+        opacity: 0,
+        duration: 1,
+        ease: 'none'
+      })
+      gsap.to(onShowTextPanelSelector, {
+        opacity: 0,
+        duration: 1,
+        ease: 'none'
+      })
+      onShowTextPanelSelector = ''
+      isTextShowing = false
+      return
+    }
+
+    if (isTextShowing) {
+      const tl = gsap.timeline()
+      tl.to(onShowTextPanelSelector, {
+        opacity: 0,
+        duration: 1,
+        ease: 'none'
+      })
+      tl.to(textPanelSelector, {
+        opacity: 1,
+        duration: 1,
+        ease: 'none'
+      })
+      onShowTextPanelSelector = textPanelSelector
+      isTextShowing = true
+    } else {
+      gsap.to('#rect-text-background', {
+        opacity: 0.3,
+        duration: 1,
+        ease: 'none'
+      })
+      gsap.to(textPanelSelector, {
+        opacity: 1,
+        duration: 1,
+        ease: 'none'
+      })
+      onShowTextPanelSelector = textPanelSelector
+      isTextShowing = true
+    }
+  }
 }
