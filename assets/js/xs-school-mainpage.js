@@ -69,7 +69,9 @@
     () => {
       return typeof _ === 'function'
     },
-    false
+    true,
+    'sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==',
+    'anonymous'
   )
     .then(() => {
       return AsyncScriptLoader.loadScript(
@@ -90,9 +92,9 @@
         () => {
           return typeof gsap !== 'undefined'
         },
-        false,
-        null,
-        null
+        true,
+        'sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==',
+        'anonymous'
       )
     })
     .then(() => {
