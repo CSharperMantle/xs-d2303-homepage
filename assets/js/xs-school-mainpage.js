@@ -69,9 +69,7 @@
     () => {
       return typeof _ === 'function'
     },
-    true,
-    'sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==',
-    'anonymous'
+    false
   )
     .then(() => {
       return AsyncScriptLoader.loadScript(
