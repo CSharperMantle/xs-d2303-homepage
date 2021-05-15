@@ -15,7 +15,6 @@
   href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/chemdoodle-uis/jquery-ui-1.11.4.min.css"
   crossorigin="anonymous">
 
-<!-- Cerina, I will certainly become your desk mate next semester. -->
 <main role="main" id="main-main">
   <canvas id="canvas-confetti-overlay" class="confetti-overlay"></canvas>
   <div class="container-grid container-grid-two-columns">
@@ -125,8 +124,7 @@
     </div>
     <div id="div-teachers" class="bordered-with-fieldset grid-row-3 grid-row-stretch">
       <fieldset>
-        <legend>
-          <strong>Our teachers</strong> 教师风采</legend>
+        <legend class="text"><strong>Our teachers</strong>&nbsp;教师风采</legend>
         <article class="slider-wrapper">
           <div class="slider">
             <div class="js__slider__images slider__images">
@@ -162,8 +160,7 @@
     </div>
     <div id="div-sotc" class="bordered-with-fieldset grid-row-4 grid-row-stretch">
       <fieldset>
-        <legend>
-          <strong>Star of the class</strong> 班级之星</legend>
+        <legend class="text"><strong>Star of the class</strong>&nbsp;班级之星</legend>
         <article class="container-flex">
           <figure class="gallery-fig">
             <img
@@ -182,8 +179,8 @@
     </div>
     <div id="div-notes" class="bordered-with-fieldset grid-row-5 grid-row-stretch">
       <fieldset>
-        <legend><strong>Words from the developer</strong> 开发者的话</legend>
-        <article>
+        <legend class="text"><strong>Words from the developer</strong>&nbsp;开发者的话</legend>
+        <article class="text">
           <p>请各位内容创作者遵循合理的开发准则。发布新文章时原则如下：</p>
           <ul>
             <li>使用语义化标签。<code>&lt;div&gt;</code>到底或者<code>&lt;p&gt;</code>到底都不是什么好主意</li>
@@ -198,19 +195,19 @@
     </div>
     <div class="bordered-with-fieldset grid-row-6 grid-row-stretch">
       <fieldset>
-        <legend><strong>Utilities</strong> 实用工具</legend>
+        <legend class="text"><strong>Utilities</strong>&nbsp;实用工具</legend>
         <div id="div-randnum-wrapper" class="center">
           <div id="div-randnum-result" class="center">0</div>
           <form id="form-randnum-control-wrapper" class="center">
             <div>
-              <label for="randnum-start-num">Start:</label>
+              <label for="randnum-start-num" class="text">Start:</label>
               <input type="number" id="input-randnum-start-num" name="randnum-start-num" value="1">
             </div>
             <div>
-              <label for="randnum-end-num">End:</label>
+              <label for="randnum-end-num" class="text">End:</label>
               <input type="number" id="input-randnum-end-num" name="randnum-end-num" value="42">
             </div>
-            <button type="button" id="button-randnum-generate">Random</button>
+            <button type="button" id="button-randnum-generate" class="text">Random</button>
           </form>
         </div>
       </fieldset>
