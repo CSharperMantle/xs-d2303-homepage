@@ -1,1 +1,3 @@
 - [ ] Extract `container-grid-one-column` to `xs-school-common.css`
+- [ ] Add loading icon on `index.html`
+- [ ] Provide script error reporting mechanism

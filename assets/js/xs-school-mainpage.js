@@ -528,8 +528,9 @@ function loadHiddenPanel() {
 function loadFortune() {
   const fortuneXhr = new XMLHttpRequest()
   fortuneXhr.onload = () => {
-    // fortune quotes are splitted with %
-    const responseList = fortuneXhr.responseText.split('%')
+    // fortune quotes are splitted with '\n%\n'
+    // Bug fixed: now handling percentage marks correctly
+    const responseList = fortuneXhr.responseText.split('\n%\n')
     const randQuote = responseList[_.random(0, responseList.length - 1)].trim()
     document.getElementById(ELEMID_SPAN_RANDOM_QUOTE).innerText = randQuote
   }
