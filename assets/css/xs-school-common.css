@@ -1,5 +1,5 @@
 @import url(https://use.sevencdn.com/css?family=Noto+Sans+SC:200,300,400,600,700);
-@import url(https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage-3rdparty@main/assets/font/NotoEmoji/NotoEmoji/NotoEmoji.min.css);
+@import url(https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage-font@main/NotoEmoji/NotoEmoji/NotoEmoji.min.css);
 
 .no-selection {
     user-select: none;
