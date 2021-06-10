@@ -174,6 +174,7 @@ const ELEMID_CONFETTI_OVERLAY = 'canvas-confetti-overlay'
 const ELEMID_DIV_ATOM_VIEWER_WRAPPER = 'div-atom-viewer-wrapper'
 const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
 const ELEMID_DIV_RANDNUM_RESULT = 'div-randnum-result'
+const ELEMID_DIV_RAINBOW_LOADER = 'div-rainbow-loader'
 const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
 const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
 const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
@@ -486,6 +487,9 @@ function loadDropper() {
   flask.addEventListener('click', () => {
     createFlaskConfettiEffect()
   })
+
+  document.getElementById(ELEMID_DIV_RAINBOW_LOADER).style.visibility =
+    'collapse'
 }
 
 function loadHiddenPanel() {
