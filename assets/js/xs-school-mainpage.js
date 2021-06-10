@@ -29,7 +29,7 @@
  *  GPLv3 License. Copyright (c) 2007-2021 iChemLabs, LLC.
  */
 
-(function () {
+;(function () {
   const AsyncScriptLoader = {
     loadScript: function (
       url,
@@ -169,6 +169,7 @@ const ELEMID_BUTTON_AIRPLANE = 'button-airplane'
 const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
 const ELEMID_BUTTON_WELCOME_PRIDE = 'button-welcome-pride'
 const ELEMID_BUTTON_ATOM_VIEWER = 'button-atom-viewer'
+const ELEMID_BUTTON_REFRESH_FORTUNE = 'button-refresh-fortune'
 const ELEMID_CONFETTI_OVERLAY = 'canvas-confetti-overlay'
 const ELEMID_DIV_ATOM_VIEWER_WRAPPER = 'div-atom-viewer-wrapper'
 const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
@@ -494,9 +495,7 @@ function loadHiddenPanel() {
   document
     .getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION)
     .addEventListener('click', () => {
-      const hiddenPanelElem = document.getElementById(
-        ELEMID_DIV_HIDDEN_PANEL
-      )
+      const hiddenPanelElem = document.getElementById(ELEMID_DIV_HIDDEN_PANEL)
       if (isHiddenPanelShowing) {
         // hide
         hiddenPanelElem.style.display = 'none'
@@ -507,7 +506,8 @@ function loadHiddenPanel() {
         isHiddenPanelShowing = true
       }
     })
-  document.getElementById(ELEMID_BUTTON_AIRPLANE)
+  document
+    .getElementById(ELEMID_BUTTON_AIRPLANE)
     .addEventListener('click', () => {
       let asteroidScript = document.getElementById(ELEMID_SCRIPT_ASTEROID)
       if (asteroidScript !== null) {
@@ -521,7 +521,8 @@ function loadHiddenPanel() {
       }
     })
 
-  document.getElementById(ELEMID_BUTTON_WELCOME_PRIDE)
+  document
+    .getElementById(ELEMID_BUTTON_WELCOME_PRIDE)
     .addEventListener('click', switchConfettiPride)
 }
 
@@ -543,8 +544,9 @@ function loadUtilities() {
   document
     .getElementById(ELEMID_BUTTON_RANDNUM_GENERATE)
     .addEventListener('click', () => {
-      const startNum = document.getElementById(ELEMID_INPUT_RANDNUM_START_NUM)
-        .value
+      const startNum = document.getElementById(
+        ELEMID_INPUT_RANDNUM_START_NUM
+      ).value
       const endNum = document.getElementById(ELEMID_INPUT_RANDNUM_END_NUM).value
       document.getElementById(ELEMID_DIV_RANDNUM_RESULT).innerText = _.random(
         startNum,
@@ -556,7 +558,9 @@ function loadUtilities() {
   document
     .getElementById(ELEMID_BUTTON_ATOM_VIEWER)
     .addEventListener('click', () => {
-      const atomViewerWrapper = document.getElementById(ELEMID_DIV_ATOM_VIEWER_WRAPPER)
+      const atomViewerWrapper = document.getElementById(
+        ELEMID_DIV_ATOM_VIEWER_WRAPPER
+      )
       if (isAtomViewerShowing === false) {
         atomViewerWrapper.style.display = 'flex'
         isAtomViewerShowing = true
@@ -566,12 +570,23 @@ function loadUtilities() {
       }
     })
 
-  const chemDoodleCanvas = new ChemDoodle.SketcherCanvas('canvas-chemdoodle', 600, 400, { useServices: true, oneMolecule: false })
+  const chemDoodleCanvas = new ChemDoodle.SketcherCanvas(
+    'canvas-chemdoodle',
+    600,
+    400,
+    { useServices: true, oneMolecule: false }
+  )
   chemDoodleCanvas.styles.atoms_displayTerminalCarbonLabels_2D = true
   chemDoodleCanvas.styles.atoms_useJMOLColors = true
   chemDoodleCanvas.styles.bonds_clearOverlaps_2D = true
   chemDoodleCanvas.styles.shapes_color = '#c10000'
   chemDoodleCanvas.repaint()
+
+  document
+    .getElementById(ELEMID_BUTTON_REFRESH_FORTUNE)
+    .addEventListener('click', () => {
+      loadFortune()
+    })
 }
 
 function switchConfettiPride() {
@@ -610,7 +625,11 @@ function initializeComponents() {
   loadUtilities()
 
   const now = new Date()
-  if (now.getFullYear() === 2021 && now.getMonth() === 2 && now.getDate() === 8) {
+  if (
+    now.getFullYear() === 2021 &&
+    now.getMonth() === 2 &&
+    now.getDate() === 8
+  ) {
     switchConfettiPride()
   }
 }
