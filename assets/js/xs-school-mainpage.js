@@ -487,9 +487,6 @@ function loadDropper() {
   flask.addEventListener('click', () => {
     createFlaskConfettiEffect()
   })
-
-  document.getElementById(ELEMID_DIV_RAINBOW_LOADER).style.visibility =
-    'collapse'
 }
 
 function loadHiddenPanel() {
@@ -628,6 +625,7 @@ function initializeComponents() {
   loadFortune()
   loadUtilities()
 
+  /*
   const now = new Date()
   if (
     now.getFullYear() === 2021 &&
@@ -635,5 +633,8 @@ function initializeComponents() {
     now.getDate() === 8
   ) {
     switchConfettiPride()
-  }
+  } */
+  // Hide the loader because we have finished loading
+  document.getElementById(ELEMID_DIV_RAINBOW_LOADER).style.visibility =
+    'collapse'
 }
