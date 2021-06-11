@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rainbow Loader Demo by Jack Rugile</title>
+    <title>Pure CSS/JS Toast Notification by Pierre Smith</title>
 
     <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/css/rainbow-loader.min.css"
-      crossorigin="anonymous">
+        href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/css/pure-css-js-toast.min.css"
+        crossorigin="anonymous">
     <!--
 /*
- * Copyright (c) 2021 by Jack Rugile (https://codepen.io/jackrugile/pen/JddmaX)
+ * Copyright (c) 2021 by Pierre Smith (https://codepen.io/kipp0/pen/pPNrrj)
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -29,26 +30,26 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
     -->
-  </head>
-  <body>
-    <div class="rainbow-loader">
-      <div class="rainbow-loader-inner">
-        <div class="rainbow-loader-line-wrap">
-          <div class="rainbow-loader-line"></div>
-        </div>
-        <div class="rainbow-loader-line-wrap">
-          <div class="rainbow-loader-line"></div>
-        </div>
-        <div class="rainbow-loader-line-wrap">
-          <div class="rainbow-loader-line"></div>
-        </div>
-        <div class="rainbow-loader-line-wrap">
-          <div class="rainbow-loader-line"></div>
-        </div>
-        <div class="rainbow-loader-line-wrap">
-          <div class="rainbow-loader-line"></div>
-        </div>
-      </div>
+</head>
+
+<body>
+    <h2>Toast</h2>
+    <p>Click on the button to show the Toast. It will disappear after 5 seconds.</p>
+    <button onclick="launchToast()">Show Toast</button>
+    <div id="toast">
+        <div id="img">Icon</div>
+        <div id="desc">A notification message..</div>
     </div>
-  </body>
+
+    <script>
+        function launchToast() {
+          var x = document.getElementById('toast')
+          x.className = 'show'
+          setTimeout(() => {
+            x.className = x.className.replace('show', '')
+          }, 5000)
+        }
+    </script>
+</body>
+
 </html>

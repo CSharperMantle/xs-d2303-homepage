@@ -1,4 +1,5 @@
 @import url(https://fonts.loli.net/css?family=Noto+Sans+SC:Regular,Bold);
+@import url(https://fonts.loli.net/css?family=Noto+Sans:Regular,Bold);
 @import url(https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage-font@main/NotoEmoji/NotoEmoji/NotoEmoji.min.css);
 
 .no-selection {
@@ -115,7 +116,7 @@ figure.gallery-fig>figcaption {
 
 /* Text */
 .text {
-    font-family: Arial, Helvetica, 'Noto Emoji', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    font-family: 'Noto Emoji', 'Noto Sans', Arial, Helvetica, 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
 }
 
 .text-small {
