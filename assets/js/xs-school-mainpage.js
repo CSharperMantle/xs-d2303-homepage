@@ -75,7 +75,7 @@
   )
     .then(() => {
       return AsyncScriptLoader.loadScript(
-        'https://csharpermantle.github.io/xs-d2303-homepage/assets/js/non-jquery-sliders.js',
+        'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/non-jquery-sliders.min.js',
         body,
         () => {
           return true
@@ -99,7 +99,7 @@
     })
     .then(() => {
       return AsyncScriptLoader.loadScript(
-        'https://csharpermantle.github.io/xs-d2303-homepage/assets/js/CustomEase-3.5.1.min.js',
+        'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/CustomEase-3.5.1.min.js',
         body,
         () => {
           return typeof CustomEase !== 'undefined'
@@ -111,7 +111,7 @@
     })
     .then(() => {
       return AsyncScriptLoader.loadScript(
-        'https://csharpermantle.github.io/xs-d2303-homepage/assets/js/CustomWiggle-3.4.3.min.js',
+        'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/CustomWiggle-3.4.3.min.js',
         body,
         () => {
           return typeof CustomWiggle !== 'undefined'
@@ -135,7 +135,7 @@
     })
     .then(() => {
       return AsyncScriptLoader.loadScript(
-        'https://csharpermantle.github.io/xs-d2303-homepage/assets/js/ChemDoodleWeb.js',
+        'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/ChemDoodleWeb.min.js',
         body,
         () => {
           return typeof ChemDoodle !== 'undefined'
@@ -147,7 +147,7 @@
     })
     .then(() => {
       return AsyncScriptLoader.loadScript(
-        'https://csharpermantle.github.io/xs-d2303-homepage/assets/chemdoodle-uis/ChemDoodleWeb-uis.js',
+        'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/chemdoodle-uis/ChemDoodleWeb-uis.min.js',
         body,
         () => {
           return true
@@ -182,9 +182,9 @@ const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
 const ELEMID_SCRIPT_ASTEROID = 'script-asteroid'
 const ELEMID_SPAN_RANDOM_QUOTE = 'span-random-quote'
 const SRC_SCRIPT_ASTEROID =
-  'https://csharpermantle.github.io/xs-d2303-homepage/assets/js/asteroids.js'
+  'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/asteroids.js'
 const SRC_TXT_FORTUNE =
-  'https://csharpermantle.github.io/xs-d2303-homepage/assets/txt/fortunes.txt'
+  'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/txt/fortunes.txt'
 let isHiddenPanelShowing = false
 let isAtomViewerShowing = false
 let prideInterval = null

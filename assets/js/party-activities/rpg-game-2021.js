@@ -56,7 +56,7 @@
     })
     .then(() => {
       return AsyncScriptLoader.loadScript(
-        'https://csharpermantle.github.io/xs-d2303-homepage/assets/js/CustomEase-3.5.1.js',
+        'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/CustomEase-3.5.1.min.js',
         body,
         () => {
           return typeof CustomEase !== 'undefined'
@@ -68,7 +68,7 @@
     })
     .then(() => {
       return AsyncScriptLoader.loadScript(
-        'https://csharpermantle.github.io/xs-d2303-homepage/assets/js/CustomWiggle-3.4.3.js',
+        'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/CustomWiggle-3.4.3.min.js',
         body,
         () => {
           return typeof CustomWiggle !== 'undefined'
