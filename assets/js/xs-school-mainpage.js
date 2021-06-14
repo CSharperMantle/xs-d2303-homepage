@@ -64,13 +64,13 @@
   const body = document.getElementsByTagName('body')[0]
 
   AsyncScriptLoader.loadScript(
-    'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js',
     body,
     () => {
       return typeof _ === 'function'
     },
     true,
-    'sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==',
+    'sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==',
     'anonymous'
   )
     .then(() => {
@@ -87,13 +87,13 @@
     })
     .then(() => {
       return AsyncScriptLoader.loadScript(
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js',
         body,
         () => {
           return typeof gsap !== 'undefined'
         },
         true,
-        'sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==',
+        'sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==',
         'anonymous'
       )
     })
