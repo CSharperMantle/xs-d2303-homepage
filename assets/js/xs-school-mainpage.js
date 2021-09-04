@@ -170,11 +170,13 @@ const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
 const ELEMID_BUTTON_WELCOME_PRIDE = 'button-welcome-pride'
 const ELEMID_BUTTON_ATOM_VIEWER = 'button-atom-viewer'
 const ELEMID_BUTTON_REFRESH_FORTUNE = 'button-refresh-fortune'
+const ELEMID_BUTTON_PERIOTRIS = 'button-periotris'
 const ELEMID_CONFETTI_OVERLAY = 'canvas-confetti-overlay'
 const ELEMID_DIV_ATOM_VIEWER_WRAPPER = 'div-atom-viewer-wrapper'
 const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
 const ELEMID_DIV_RANDNUM_RESULT = 'div-randnum-result'
 const ELEMID_DIV_RAINBOW_LOADER = 'div-rainbow-loader'
+const ELEMID_DIV_PERIOTRIS_WRAPPER = 'div-periotris-wrapper'
 const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
 const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
 const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
@@ -187,6 +189,7 @@ const SRC_TXT_FORTUNE =
   'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/txt/fortunes.txt'
 let isHiddenPanelShowing = false
 let isAtomViewerShowing = false
+let isPeriotrisShowing = false
 let prideInterval = null
 
 // click-switching images
@@ -554,6 +557,22 @@ function loadUtilities() {
         endNum,
         false
       )
+    })
+
+  // periotris
+  document
+    .getElementById(ELEMID_BUTTON_PERIOTRIS)
+    .addEventListener('click', () => {
+      const atomViewerWrapper = document.getElementById(
+        ELEMID_DIV_PERIOTRIS_WRAPPER
+      )
+      if (isPeriotrisShowing === false) {
+        atomViewerWrapper.style.display = 'block'
+        isPeriotrisShowing = true
+      } else {
+        atomViewerWrapper.style.display = 'none'
+        isPeriotrisShowing = false
+      }
     })
 
   document
