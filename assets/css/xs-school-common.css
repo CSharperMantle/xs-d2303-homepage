@@ -27,6 +27,7 @@ img {
     max-width: 740px;
 }
 
+/* HACK: make sure user images are fit */
 img.center {
     width: 100%;
 }
