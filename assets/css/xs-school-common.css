@@ -11,7 +11,7 @@
 
 .center {
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto !important;
 }
 
 .bordered-with-fieldset>fieldset {
@@ -25,6 +25,10 @@
 /* Do the javascript's width adjusting jobs by CSS */
 img {
     max-width: 740px;
+}
+
+img.center {
+    width: 100%;
 }
 
 img.img-grayscale-on-hover {
