@@ -27,11 +27,6 @@ img {
     max-width: 740px;
 }
 
-/* HACK: make sure user images are fit */
-img.center {
-    width: 100%;
-}
-
 img.img-grayscale-on-hover {
     filter: unset;
     transition: filter 0.2s linear;
