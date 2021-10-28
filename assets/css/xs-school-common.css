@@ -128,7 +128,7 @@ figure.gallery-fig>figcaption {
 }
 
 /* Footers */
-.footer {
+.csm-webpage-footer {
     display: flex;
     padding: 5px;
     background-color: #dfdfdf;
