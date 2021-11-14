@@ -116,7 +116,7 @@ figure.gallery-fig>figcaption {
 
 /* Text */
 .text {
-    font-family: 'Noto Emoji', 'Noto Sans', Arial, Helvetica, 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    font-family: 'Noto Sans', Arial, Helvetica, 'Noto Sans SC', 'Microsoft YaHei', 'Noto Emoji', sans-serif;
 }
 
 .text-small {
