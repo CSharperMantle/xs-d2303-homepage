@@ -452,8 +452,6 @@ function loadDropper() {
     gsap.delayedCall(4, makeDrip)
   }
 
-  makeDrip()
-
   // confetti
   const confettiInstance = confetti.create(confettiCanvas, {
     resize: true,
