@@ -22,11 +22,6 @@
     font-size: 14pt;
 }
 
-/* Do the javascript's width adjusting jobs by CSS */
-img {
-    max-width: 740px;
-}
-
 img.img-grayscale-on-hover {
     filter: unset;
     transition: filter 0.2s linear;

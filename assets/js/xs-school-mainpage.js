@@ -45,7 +45,6 @@
   const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
   const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
   const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
-  const ELEMID_PRE_USER_AGENT = 'pre-user-agent'
   const ELEMID_SCRIPT_ASTEROID = 'script-asteroid'
   const ELEMID_SPAN_RANDOM_QUOTE = 'span-random-quote'
   const SRC_SCRIPT_ASTEROID =
@@ -197,8 +196,6 @@
   function loadHiddenPanel() {
     'use strict'
 
-    document.getElementById(ELEMID_PRE_USER_AGENT).innerText =
-      navigator.userAgent
     document
       .getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION)
       .addEventListener('click', () => {
