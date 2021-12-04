@@ -1,11 +1,145 @@
 <meta charset="utf-8">
-<link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/css/xs-school-common.min.css"
-    crossorigin="anonymous">
-<link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/css/sports-meeting/sports-meeting-2020.min.css"
-    crossorigin="anonymous">
+<base href="https://www.nbxiaoshi.net">
+<style>
+    .no-selection {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    
+    .center {
+        text-align: center;
+        margin: 0 auto !important;
+    }
+    
+    .bordered-with-fieldset>fieldset {
+        border-color: #000000;
+    }
+    
+    .bordered-with-fieldset>fieldset>legend {
+        font-size: 14pt;
+    }
+    
+    img.img-grayscale-on-hover {
+        filter: unset;
+        transition: filter 0.2s linear;
+    }
+    
+    img.img-grayscale-on-hover:hover {
+        filter: grayscale(1);
+    }
+    
+    img.img-deblur-on-hover {
+        filter: blur(1rem);
+        transition: filter 0.2s linear;
+    }
+    
+    img.img-deblur-on-hover:hover {
+        filter: unset;
+    }
+    
+    img.img-brighter {
+        filter: brightness(1.3);
+    }
+    
+    /* These are for grids */
+    .container-grid {
+        display: grid;
+        grid-gap: 10px;
+        grid-auto-rows: min-content;
+        grid-auto-columns: min-content;
+    }
+    
+    .grid-row-1 {
+        grid-row: 1;
+    }
+    
+    .grid-row-2 {
+        grid-row: 2;
+    }
+    
+    .grid-row-3 {
+        grid-row: 3;
+    }
+    
+    .grid-row-4 {
+        grid-row: 4;
+    }
+    
+    .grid-row-5 {
+        grid-row: 5;
+    }
+    
+    .grid-row-stretch {
+        grid-column: 1 / -1;
+    }
+    
+    /* These are for flexbox modeling */
+    .container-flex {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    
+    .container-flex-row {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    
+    .container-flex-column {
+        display: flex;
+        flex-flow: column wrap;
+    }
+    
+    /* These are for better image display */
+    figure.gallery-fig {
+        border: thin #c0c0c0 solid;
+        display: flex;
+        flex-flow: column;
+        padding: 5px;
+        margin: auto;
+    }
+    
+    figure.gallery-fig>figcaption {
+        background-color: #222;
+        color: #fff;
+        font: italic smaller sans-serif;
+        padding: 3px;
+        text-align: center;
+    }
+    
+    /* Text */
+    .text {
+        font-family: 'Noto Sans', Arial, Helvetica, 'Noto Sans SC', 'Microsoft YaHei', 'Noto Emoji', sans-serif;
+    }
+    
+    .text-small {
+        font-size: small;
+    }
+    
+    .text-large {
+        font-size: large;
+    }
+</style>
+<style>
+.hidden-content {
+    margin-top: 255px;
+    position: relative;
+}
 
+.container-grid-one-column {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.confetti-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+</style>
 <main>
     <article class="container-grid container-grid-one-column">
         <section class="grid-row-1 container-flex-column">
@@ -36,7 +170,7 @@
             <p class="text">
                 3. 由于天气较冷，小柴同学当天穿了一件厚卫衣前往白杨校区。在4X400米比赛赛前，她考虑到运动需要，选择穿短袖参加比赛。此时，她体内的神经系统和体液系统为了维持她的体温所进行的活动有（    ）<br>A. 冷觉感受器兴奋，骨骼肌颤栗，毛细血管收缩<br>B. 温觉感受器兴奋，肾上腺素分泌增加，代谢增强<br>C. 冷觉感受器兴奋，下丘脑分泌的甲状腺激素增多，细胞代谢旺盛<br>D. 温觉感受器兴奋，垂体分泌的生长激素增多，细胞代谢旺盛
             </p>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114135603864001.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114135603864001.jpg">
             <span class="center text">（第3题图）</span>
             <p class="text">
                 4. 研究下列运动时，可以近似将运动员看作质点的有（    ）<br>A. 小刁同学在跳长绳比赛时的甩绳动作<br>B. 小王同学参加800m比赛<br>C. 小高同学和小潘同学在4x100米接力比赛时交接棒的动作<br>D. 小何同学参加蛟龙出海比赛
@@ -44,12 +178,12 @@
             <p class="text">
                 5. 下图为小陆同学参加三级跳远比赛时的照片，其体现了唯物辩证法的哪些观点（    ）<br>①发展的实质是事物的前进和上升<br>②量变到达一定程度必然引起质变，质变是量变的必然结果<br>③人们对新事物的认识有一个过程<br>④我们要用发展的眼光看问题<br>A. ①②③        B. ①②④        C. ①③④        D. ②③④
             </p>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114135604994002.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114135604994002.jpg">
             <span class="center text">（第5题图）</span>
             <p class="text">
                 6. 下图为小胡同学参加跳高比赛时的照片。假设其体重为50kg，成绩为1.5m，并最后落到高为0.5m的垫上。不考虑空气阻力与其在水平方向上的位移，取g=10m/s^2，下列说法正确的是（    ）<br>A. 小胡同学克服重力做的功为800J<br>B. 小胡同学起跳时的速度为√30m/s<br>C. 小胡同学在空中停留的时间为√2s<br>D. 小胡同学落到垫上时的速度大小为4m/s
             </p>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114135604199003.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114135604199003.jpg">
             <span class="center text">（第6题图）</span>
         </section>
         <section class="grid-row-5 container-flex-column">
@@ -57,12 +191,12 @@
             <p class="text">
                 7. 小倪同学在运动会期间的4X400米接力可以近似看作变速运动。在400米跑步的过程中，小倪同学在前50米作加速度为2m/s^2的加速运动，接着以匀速跑了330米，最后因为体力不足，作与刚开始加速运动时加速度大小相同、方向相反的匀减速运动直到终点，求：<br>（1）小倪同学作匀速运动时的速度大小v；<br>（2）小倪同学跑完全程总时长
             </p>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114135604918004.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114135604918004.jpg">
             <span class="center text">（第7题图）</span>
             <p class="text">
                 8. 下图为小应同学进行铅球比赛时拍摄的照片，请回答有关问题。<br>铅球离手后的运动可以近似看为物体的平抛运动。已知小应同学身高2m，其铅球比赛最终成绩为6m，取g=10m/s^2，求：<br>（1）铅球在空中运动的时间；<br>（2）铅球离手时的速度大小；<br>（3）铅球落地时速度方向与水平地面夹角的正弦值
             </p>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114135605327005.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114135605327005.jpg">
             <span class="center text">（第8题图）</span>
         </section>
         <section class="grid-row-6 container-flex-column">

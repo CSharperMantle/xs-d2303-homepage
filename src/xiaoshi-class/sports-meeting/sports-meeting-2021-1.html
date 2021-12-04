@@ -1,70 +1,204 @@
 <meta charset="utf-8">
-<link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/css/xs-school-common.min.css"
-    crossorigin="anonymous">
-<link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/css/sports-meeting/sports-meeting-2020.min.css"
-    crossorigin="anonymous">
+<base href="https://www.nbxiaoshi.net">
+<style>
+    .no-selection {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    
+    .center {
+        text-align: center;
+        margin: 0 auto !important;
+    }
+    
+    .bordered-with-fieldset>fieldset {
+        border-color: #000000;
+    }
+    
+    .bordered-with-fieldset>fieldset>legend {
+        font-size: 14pt;
+    }
+    
+    img.img-grayscale-on-hover {
+        filter: unset;
+        transition: filter 0.2s linear;
+    }
+    
+    img.img-grayscale-on-hover:hover {
+        filter: grayscale(1);
+    }
+    
+    img.img-deblur-on-hover {
+        filter: blur(1rem);
+        transition: filter 0.2s linear;
+    }
+    
+    img.img-deblur-on-hover:hover {
+        filter: unset;
+    }
+    
+    img.img-brighter {
+        filter: brightness(1.3);
+    }
+    
+    /* These are for grids */
+    .container-grid {
+        display: grid;
+        grid-gap: 10px;
+        grid-auto-rows: min-content;
+        grid-auto-columns: min-content;
+    }
+    
+    .grid-row-1 {
+        grid-row: 1;
+    }
+    
+    .grid-row-2 {
+        grid-row: 2;
+    }
+    
+    .grid-row-3 {
+        grid-row: 3;
+    }
+    
+    .grid-row-4 {
+        grid-row: 4;
+    }
+    
+    .grid-row-5 {
+        grid-row: 5;
+    }
+    
+    .grid-row-stretch {
+        grid-column: 1 / -1;
+    }
+    
+    /* These are for flexbox modeling */
+    .container-flex {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    
+    .container-flex-row {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    
+    .container-flex-column {
+        display: flex;
+        flex-flow: column wrap;
+    }
+    
+    /* These are for better image display */
+    figure.gallery-fig {
+        border: thin #c0c0c0 solid;
+        display: flex;
+        flex-flow: column;
+        padding: 5px;
+        margin: auto;
+    }
+    
+    figure.gallery-fig>figcaption {
+        background-color: #222;
+        color: #fff;
+        font: italic smaller sans-serif;
+        padding: 3px;
+        text-align: center;
+    }
+    
+    /* Text */
+    .text {
+        font-family: 'Noto Sans', Arial, Helvetica, 'Noto Sans SC', 'Microsoft YaHei', 'Noto Emoji', sans-serif;
+    }
+    
+    .text-small {
+        font-size: small;
+    }
+    
+    .text-large {
+        font-size: large;
+    }
+</style>
+<style>
+.hidden-content {
+    margin-top: 255px;
+    position: relative;
+}
 
+.container-grid-one-column {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.confetti-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+</style>
 <main>
     <article class="container-grid container-grid-one-column">
         <section class="grid-row-1 container-flex-column">
             <h2 class="center text">开幕式</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132632507001.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132632507001.jpg">
         </section>
         <section class="grid-row-2 container-flex-column">
             <h2 class="center text">100米</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132633708002.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132633172003.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132633774004.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132633708002.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132633172003.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132633774004.jpg">
             <h2 class="center text">1500米</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132633659005.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132634804006.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132634929007.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132634431008.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132635266009.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132635334010.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132633659005.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132634804006.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132634929007.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132634431008.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132635266009.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132635334010.jpg">
             <h2 class="center text">4x100米接力</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132635697011.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132636837012.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132636596013.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132636847014.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132635697011.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132636837012.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132636596013.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132636847014.jpg">
             <h2 class="center text">4x400米接力</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132636844015.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132637863016.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132637565017.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132637211018.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132637813019.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132638832020.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132638478021.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132638180022.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132638839023.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132639445024.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132636844015.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132637863016.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132637565017.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132637211018.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132637813019.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132638832020.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132638478021.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132638180022.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132638839023.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132639445024.jpg">
             <h2 class="center text">50米</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132639696025.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132639696025.jpg">
             <h2 class="center text">800米</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132639876026.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132639876026.jpg">
         </section>
         <section class="grid-row-3 container-flex-column">
             <h2 class="center text">跳长绳</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132640613027.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132640977028.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132640679029.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132640325030.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132640613027.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132640977028.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132640679029.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132640325030.jpg">
             <h2 class="center text">蛟龙出海</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132641948031.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132641948031.jpg">
             <h2 class="center text">铅球</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132641843032.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132641828033.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132642608034.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132642558035.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132641843032.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132641828033.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132642608034.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132642558035.jpg">
             <h2 class="center text">实心球</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132642444036.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132642444036.jpg">
             <h2 class="center text">跳远</h2>
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132643350037.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132643362038.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132643176039.jpg">
-            <img class="center" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114132643596040.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132643350037.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132643362038.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132643176039.jpg">
+            <img class="center" src="/WEB_Files/uploadfile/202111/20211114132643596040.jpg">
         </section>
     </article>
 </main>

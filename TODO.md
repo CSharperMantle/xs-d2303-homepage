@@ -1,3 +1,9 @@
-- [ ] Extract `container-grid-one-column` to `xs-school-common.css`
-- [ ] Add loading icon on `index.html`
-- [ ] Provide script error reporting mechanism
+Resources:
+- [x] lodash (JS)
+- [x] GSAP (JS)
+- [ ] confetti (JS)
+- [ ] rainbow-loader (CSS)
+- [ ] ChemDoodle (CSS & JS)
+- [ ] fortune (TXT)
+- [ ] REEJI JINGGANG BOLD (TTF)
+- [ ] NotoEmoji (TTF)

@@ -3,9 +3,6 @@
  *
  * Libraries in use:
  *
- * async-script-loader:
- *  https://github.com/CSharperMantle/async-script-loader
- *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle)
  * Click-switch Images:
  *  https://codepen.io/CSharperMantle/pen/yLOrJQQ
  *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle)
@@ -24,36 +21,19 @@
  * gsap:
  *  https://greensock.com
  *  OTHER. Copyright 2020, GreenSock. All rights reserved. Subject to the terms at https://greensock.com/standard-license or for Club GreenSock members, the agreement issued with that membership.
- * ChemDoodle Web Component:
- *  https://web.chemdoodle.com
- *  GPLv3 License. Copyright (c) 2007-2021 iChemLabs, LLC.
  */
 
 ;(() => {
-  const ELEMID_BUTTON_AIRPLANE = 'button-airplane'
   const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
   const ELEMID_BUTTON_WELCOME_PRIDE = 'button-welcome-pride'
-  const ELEMID_BUTTON_ATOM_VIEWER = 'button-atom-viewer'
-  const ELEMID_BUTTON_REFRESH_FORTUNE = 'button-refresh-fortune'
-  const ELEMID_BUTTON_PERIOTRIS = 'button-periotris'
   const ELEMID_CONFETTI_OVERLAY = 'canvas-confetti-overlay'
-  const ELEMID_DIV_ATOM_VIEWER_WRAPPER = 'div-atom-viewer-wrapper'
   const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
   const ELEMID_DIV_RANDNUM_RESULT = 'div-randnum-result'
   const ELEMID_DIV_RAINBOW_LOADER = 'div-rainbow-loader'
-  const ELEMID_DIV_PERIOTRIS_WRAPPER = 'div-periotris-wrapper'
   const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
   const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
   const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
-  const ELEMID_SCRIPT_ASTEROID = 'script-asteroid'
-  const ELEMID_SPAN_RANDOM_QUOTE = 'span-random-quote'
-  const SRC_SCRIPT_ASTEROID =
-    'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/asteroids.js'
-  const SRC_TXT_FORTUNE =
-    'https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/txt/fortunes.txt'
   let isHiddenPanelShowing = false
-  let isAtomViewerShowing = false
-  let isPeriotrisShowing = false
   let prideInterval = null
 
   // click-switching images
@@ -210,38 +190,10 @@
           isHiddenPanelShowing = true
         }
       })
-    document
-      .getElementById(ELEMID_BUTTON_AIRPLANE)
-      .addEventListener('click', () => {
-        let asteroidScript = document.getElementById(ELEMID_SCRIPT_ASTEROID)
-        if (asteroidScript !== null) {
-          document.body.removeChild(asteroidScript)
-        } else {
-          asteroidScript = document.createElement('script')
-          asteroidScript.type = 'text/javascript'
-          asteroidScript.setAttribute('id', ELEMID_SCRIPT_ASTEROID)
-          asteroidScript.src = SRC_SCRIPT_ASTEROID
-          document.body.appendChild(asteroidScript)
-        }
-      })
 
     document
       .getElementById(ELEMID_BUTTON_WELCOME_PRIDE)
       .addEventListener('click', switchConfettiPride)
-  }
-
-  function loadFortune() {
-    const fortuneXhr = new XMLHttpRequest()
-    fortuneXhr.onload = () => {
-      // fortune quotes are splitted with '\n%\n'
-      // Bug fixed: now handling percentage marks correctly
-      const responseList = fortuneXhr.responseText.split('\n%\n')
-      const randQuote =
-        responseList[_.random(0, responseList.length - 1)].trim()
-      document.getElementById(ELEMID_SPAN_RANDOM_QUOTE).innerText = randQuote
-    }
-    fortuneXhr.open('GET', SRC_TXT_FORTUNE)
-    fortuneXhr.send()
   }
 
   function loadUtilities() {
@@ -260,55 +212,6 @@
           endNum,
           false
         )
-      })
-
-    // periotris
-    document
-      .getElementById(ELEMID_BUTTON_PERIOTRIS)
-      .addEventListener('click', () => {
-        const atomViewerWrapper = document.getElementById(
-          ELEMID_DIV_PERIOTRIS_WRAPPER
-        )
-        if (isPeriotrisShowing === false) {
-          atomViewerWrapper.style.display = 'block'
-          isPeriotrisShowing = true
-        } else {
-          atomViewerWrapper.style.display = 'none'
-          isPeriotrisShowing = false
-        }
-      })
-
-    document
-      .getElementById(ELEMID_BUTTON_ATOM_VIEWER)
-      .addEventListener('click', () => {
-        const atomViewerWrapper = document.getElementById(
-          ELEMID_DIV_ATOM_VIEWER_WRAPPER
-        )
-        if (isAtomViewerShowing === false) {
-          atomViewerWrapper.style.display = 'flex'
-          isAtomViewerShowing = true
-        } else {
-          atomViewerWrapper.style.display = 'none'
-          isAtomViewerShowing = false
-        }
-      })
-
-    const chemDoodleCanvas = new ChemDoodle.SketcherCanvas(
-      'canvas-chemdoodle',
-      600,
-      400,
-      { useServices: true, oneMolecule: false }
-    )
-    chemDoodleCanvas.styles.atoms_displayTerminalCarbonLabels_2D = true
-    chemDoodleCanvas.styles.atoms_useJMOLColors = true
-    chemDoodleCanvas.styles.bonds_clearOverlaps_2D = true
-    chemDoodleCanvas.styles.shapes_color = '#c10000'
-    chemDoodleCanvas.repaint()
-
-    document
-      .getElementById(ELEMID_BUTTON_REFRESH_FORTUNE)
-      .addEventListener('click', () => {
-        loadFortune()
       })
   }
 
@@ -345,7 +248,6 @@
     loadDropper()
     loadSwitchableImg()
     loadHiddenPanel()
-    loadFortune()
     loadUtilities()
 
     /*
