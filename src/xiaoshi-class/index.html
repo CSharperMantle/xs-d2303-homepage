@@ -1,15 +1,382 @@
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage-font@main/REEJI-JinGang-ExtraBoldGB10/stylesheet.min.css">
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/css/xs-school-common.min.css">
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/css/xs-school-mainpage.min.css">
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/css/ChemDoodleWeb.min.css">
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/chemdoodle-uis/jquery-ui-1.11.4.min.css">
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/css/rainbow-loader.min.css">
+<base href="https://www.nbxiaoshi.net">
+
+<style>
+@font-face {
+    font-family: 'REEJI-JinGang-ExtraBoldGB1.0';
+    src: url('/font/D2303/REEJI-JinGang-ExtraBoldGB10-Regular.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap
+}
+</style>
+<style>
+.rainbow-loader{background:#fff;bottom:0;left:0;overflow:hidden;position:absolute;right:0;top:0;z-index:99999}.rainbow-loader-inner{bottom:0;height:60px;left:0;margin:auto;position:absolute;right:0;top:0;width:100px}.rainbow-loader-line-wrap{animation:rainbow-spin 2s cubic-bezier(.175,.885,.32,1.275) infinite;box-sizing:border-box;height:50px;left:0;overflow:hidden;position:absolute;top:0;transform-origin:50% 100%;width:100px}.rainbow-loader-line{border:4px solid transparent;border-radius:100%;box-sizing:border-box;height:100px;left:0;margin:0 auto;position:absolute;right:0;top:0;width:100px}.rainbow-loader-line-wrap:nth-child(1){animation-delay:-50ms}.rainbow-loader-line-wrap:nth-child(2){animation-delay:-.1s}.rainbow-loader-line-wrap:nth-child(3){animation-delay:-150ms}.rainbow-loader-line-wrap:nth-child(4){animation-delay:-.2s}.rainbow-loader-line-wrap:nth-child(5){animation-delay:-250ms}.rainbow-loader-line-wrap:nth-child(1) .rainbow-loader-line{border-color:#ea4747;height:90px;width:90px;top:7px}.rainbow-loader-line-wrap:nth-child(2) .rainbow-loader-line{border-color:#eaea47;height:76px;width:76px;top:14px}.rainbow-loader-line-wrap:nth-child(3) .rainbow-loader-line{border-color:#47ea47;height:62px;width:62px;top:21px}.rainbow-loader-line-wrap:nth-child(4) .rainbow-loader-line{border-color:#47eaea;height:48px;width:48px;top:28px}.rainbow-loader-line-wrap:nth-child(5) .rainbow-loader-line{border-color:#4747ea;height:34px;width:34px;top:35px}@keyframes rainbow-spin{0%,15%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+</style>
+<style>
+@font-face {
+    font-family: 'Noto Emoji';
+    src: url('/font/D2303/NotoEmoji.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.no-selection {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto !important;
+}
+
+.bordered-with-fieldset>fieldset {
+    border-color: #000000;
+}
+
+.bordered-with-fieldset>fieldset>legend {
+    font-size: 14pt;
+}
+
+img.img-grayscale-on-hover {
+    filter: unset;
+    transition: filter 0.2s linear;
+}
+
+img.img-grayscale-on-hover:hover {
+    filter: grayscale(1);
+}
+
+img.img-deblur-on-hover {
+    filter: blur(1rem);
+    transition: filter 0.2s linear;
+}
+
+img.img-deblur-on-hover:hover {
+    filter: unset;
+}
+
+img.img-brighter {
+    filter: brightness(1.3);
+}
+
+/* These are for grids */
+.container-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-rows: min-content;
+    grid-auto-columns: min-content;
+}
+
+.grid-row-1 {
+    grid-row: 1;
+}
+
+.grid-row-2 {
+    grid-row: 2;
+}
+
+.grid-row-3 {
+    grid-row: 3;
+}
+
+.grid-row-4 {
+    grid-row: 4;
+}
+
+.grid-row-5 {
+    grid-row: 5;
+}
+
+.grid-row-stretch {
+    grid-column: 1 / -1;
+}
+
+/* These are for flexbox modeling */
+.container-flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container-flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container-flex-column {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+/* These are for better image display */
+figure.gallery-fig {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    margin: auto;
+}
+
+figure.gallery-fig>figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+/* Text */
+.text {
+    font-family: 'Noto Sans', Arial, Helvetica, 'Noto Sans SC', 'Microsoft YaHei', 'Noto Emoji', sans-serif;
+}
+
+.text-small {
+    font-size: small;
+}
+
+.text-large {
+    font-size: large;
+}
+</style>
+<style>
+.grid-row-6 {
+    grid-row: 6;
+}
+
+.container-grid-two-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#main-main {
+    position: relative;
+}
+
+#div-under-construction-banner {
+    padding: 25px 20px 10px 20px;
+    background: #f1f1f1;
+}
+
+#div-under-construction-cap>h2 {
+    font-family: 'Source Sans Pro';
+    font-weight: normal;
+    font-size: x-large;
+    color: rgb(102, 102, 102);
+}
+
+#img-barrier {
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #DEDCDB;
+}
+
+#span-random-quote {
+    display: block;
+    margin: 5px 0 0 0;
+    word-break: break-word;
+    font-size: 1.5em;
+    font-family: Georgia, serif;
+    color: #000;
+}
+
+/* Really simple non-jQuery sliders */
+.slider {
+    max-width: 800px;
+    margin: 30px auto 0;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slider__images {
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    list-style-type: none;
+    -webkit-transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+    transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+}
+
+.slider__images.loaded {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slider__images-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.no-js .slider__images-item:first-of-type {
+    position: relative;
+}
+
+.no-js .slider__images-item:not(:first-of-type) {
+    display: none !important;
+}
+
+.slider__images-image {
+    display: block;
+}
+
+.slider__controls {
+    margin-top: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+
+.slider__control {
+    display: inline-block;
+    color: #829995;
+    cursor: pointer;
+}
+
+.slider__control--prev {
+    margin-right: 10px;
+    border-radius: 3px;
+    color: #333;
+}
+
+.slider__control--next {
+    margin-left: 10px;
+    border-radius: 3px;
+    color: #333;
+}
+
+.slider__pagers {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.slider__pagers button {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #829995;
+    border-radius: 3px;
+    padding: 0 10px;
+}
+
+.slider__pagers button.active {
+    color: #333;
+}
+
+/* droppers */
+:root {
+    --main-color: #e6098b;
+    --bg-color: #fff;
+}
+
+#div-dropper-container {
+    background-color: var(--bg-color);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+}
+
+#div-dropper-container>svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.liquid {
+    fill: var(--main-color);
+}
+
+#bubbleGroup {
+    stroke: var(--main-color);
+    fill: #222932;
+}
+
+.poly {
+    fill: #3a86ff;
+}
+
+.glass {
+    opacity: 1;
+}
+
+#flask {
+    opacity: 1;
+}
+
+#canvas-dropper-confetti {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* random number generator */
+#div-randnum-wrapper {
+    background-color: #c6eae3;
+    padding: 10px;
+}
+
+#div-randnum-result {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+}
+
+#form-randnum-control-wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+#form-randnum-control-wrapper>button {
+    border-radius: 5px;
+}
+
+#div-hidden-panel {
+    display: none;
+    /* display: grid; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: max-content;
+    gap: 10%;
+    width: 600px;
+    border: 2px solid gray;
+    padding: 15px;
+}
+
+#div-hidden-panel>* {
+    box-sizing: border-box;
+}
+
+.confetti-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+</style>
 
 <main role="main" id="main-main">
   <canvas id="canvas-confetti-overlay" class="confetti-overlay"></canvas>
@@ -31,19 +398,14 @@
       </div>
       <span class="center">
         <div id="div-hidden-panel" class="center">
-          <button id="button-airplane"><span class="text center text-large">📄✈</span></button>
+          <button id="button-airplane" disabled=""><span class="text center text-large">📄✈</span></button>
           <button id="button-welcome-pride"><span class="text center text-large">🎉</span></button>
-          <button id="button-atom-viewer"><span class="text center text-large">🔍</span></button>
-          <button id="button-refresh-fortune"><span class="text center text-large">💡</span></button>
-          <button id="button-periotris"><span class="text center text-large">XLD&apos;s approval</span></button>
+          <button id="button-atom-viewer" disabled=""><span class="text center text-large">🔍</span></button>
+          <button id="button-refresh-fortune" disabled=""><span class="text center text-large">💡</span></button>
+          <button id="button-periotris" disabled=""><span class="text center text-large">XLD&apos;s approval</span></button>
           <button disabled=""><span class="text center text-large">Coming soon</span></button>
         </div>
         <div id="div-feature-wrapper" class="container-flex-column center">
-          <div id="div-atom-viewer-wrapper" class="center">
-            <canvas width="600" height="400" id="canvas-chemdoodle"></canvas>
-          </div>
-          <div id="div-periotris-wrapper" class="center">
-          </div>
         </div>
     </div>
     <div id="div-class-banner" class="grid-row-2 grid-row-stretch">
@@ -174,12 +536,510 @@
   </div>
 </main>
 
-<script src="https://cdn.jsdelivr.net/gh/lodash/lodash@4.17.21/dist/lodash.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/greensock/GSAP@3.6.1/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2/dist/confetti.browser.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/CustomEase-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/CustomWiggle-3.4.3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/ChemDoodleWeb.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/chemdoodle-uis/ChemDoodleWeb-uis.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/non-jquery-sliders.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/CSharperMantle/xs-d2303-homepage@main/assets/js/xs-school-mainpage.min.js"></script>
+<script src="/js/D2303/lodash-4.17.21.min.js"></script>
+<script src="/js/D2303/gsap-3.6.1.min.js"></script>
+<script src="/js/D2303/confetti.browser-1.3.2.js"></script>
+<script>
+/**
+ * Copyright (c) 2021 by Rong "Mantle" Bao (https://codepen.io/CSharperMantle/pen/OJXLzVV)
+
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this
+ * software and associated documentation files (the "Software"), to deal in the Software
+ * without restriction, including without limitation the rights to use, copy, modify,
+ * merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit
+ * persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ * The above copyright notice and this permission notice shall be included in all copies or
+ * substantial portions of the Software.
+
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+ * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ */
+
+(function() {
+  // ==GLOBAL VARS, CONSTS AND HELPERS==
+
+  // create pager list items
+  const sliderImagesList = document.querySelectorAll('.slider__images-image')
+  const sliderPagersElem = document.querySelector('.js__slider__pagers') // we will only fill the first pager element
+
+  // HACK: fill in sliders in advance in order to get the total count of elements in LAST_ELEM_INDEX
+  function sliderPagePrefill() {
+    sliderImagesList.forEach((image, index) => {
+      const buttonElem = document.createElement('button')
+      const buttonText = document.createTextNode(index + 1)
+      buttonElem.appendChild(buttonText)
+      buttonElem.setAttribute('type', 'button')
+      sliderPagersElem.insertAdjacentElement('beforeend', buttonElem)
+
+      // HACK: Chrome won't fire onload event for more than 1 time even the image's src has changed. This is to forcedly rerun the event handler each time the image is loaded. Chrome's behaviour is non-standard and described at http://code.google.com/p/chromium/issues/detail?id=7731#c12
+      const imageLoader = new Image()
+      imageLoader.addEventListener('load', () => {
+        checkImageHeight()
+        document.querySelector(SELECTOR_SLIDER_IMAGES).classList.add('loaded')
+      })
+      imageLoader.src = image.getAttribute('src')
+    })
+  }
+  sliderPagePrefill()
+
+  // set up constants and vars
+  const SELECTOR_SLIDER_PAGERS = 'ol.js__slider__pagers button'
+  const SELECTOR_SLIDER_PAGERS_ACTIVE = '.js__slider__pagers button.active'
+  const SELECTOR_SLIDER_IMAGES = '.js__slider__images'
+  const SELECTOR_SLIDER_IMAGES_ITEM = '.slider__images-item'
+  const SELECTOR_SLIDER_CONTROL_NEXT = '.slider__control--next'
+  const SELECTOR_SLIDER_CONTROL_PREV = '.slider__control--prev'
+
+  // NOTE: You may be interested in tweaking switching speed by changing this constant.
+  const SLIDER_SPEED = 5000
+
+  const LAST_ELEM_INDEX =
+      document.querySelectorAll(SELECTOR_SLIDER_PAGERS).length - 1
+
+  let sliderTarget = null
+  let animationOngoing = false // HACK: Prevent from interrupting animations
+  let isDocumentOnFocus = true // HACK: Prevent the blurring from interrupting the animation
+
+  function getFirstVisibleElem(iterable) {
+    for (let i = 0; i < iterable.length; i++) {
+      const elem = iterable[i]
+      if (elem.style.display !== 'none' && elem.style.visibility !== 'hidden') {
+        return elem
+      }
+    }
+  }
+
+  function indexOf(iterable, elem) {
+    for (let i = 0; i < iterable.length; i++) {
+      if (iterable[i] === elem) {
+        return i
+      }
+    }
+    return -1
+  }
+
+  function fadeInOut(elemFadeIn, elemFadeOut, speed) {
+    animationOngoing = true
+    const speed_ = speed || 20
+    let currentInOpac = 0
+    elemFadeIn.style.opacity = currentInOpac
+    elemFadeOut.style.opacity = 1 - currentInOpac
+    elemFadeIn.style.display = null
+    elemFadeOut.style.display = null
+
+    const interval = setInterval(() => {
+      elemFadeIn.style.opacity = currentInOpac
+      elemFadeOut.style.opacity = 1 - currentInOpac
+      currentInOpac += 0.03
+      if (currentInOpac >= 1) {
+        elemFadeIn.style.opacity = null
+        elemFadeOut.style.opacity = null
+        elemFadeOut.style.display = 'none'
+        clearInterval(interval)
+        animationOngoing = false
+      }
+    }, speed_)
+  }
+
+  function initBlurDetection() {
+    document.addEventListener('blur', () => {
+      isDocumentOnFocus = false
+    })
+    document.addEventListener('focus', () => {
+      isDocumentOnFocus = true
+    })
+  }
+  initBlurDetection()
+
+  // transition function
+  function sliderResponse(sliderTarget) {
+    const items = document.getElementsByClassName('slider__images-item')
+    fadeInOut(items[sliderTarget], getFirstVisibleElem(items), 5)
+    const pagers = document.querySelectorAll(SELECTOR_SLIDER_PAGERS)
+    pagers.forEach((elem) => {
+      elem.classList.remove('active')
+    })
+    pagers[sliderTarget].classList.add('active')
+  }
+
+  // add css height to slider images list
+  function checkImageHeight() {
+    const sliderHeight = getFirstVisibleElem(
+      document.querySelectorAll('.slider__images-image')
+    ).height
+    document.querySelector(SELECTOR_SLIDER_IMAGES).style.height =
+        sliderHeight + 'px'
+  }
+
+  // slider timing
+  function sliderTiming() {
+    if (!isDocumentOnFocus) {
+      return
+    }
+    const currentActiveElem = document.querySelector(
+      SELECTOR_SLIDER_PAGERS_ACTIVE
+    )
+    const currentActiveIndex = indexOf(
+      currentActiveElem.parentElement.children,
+      currentActiveElem
+    )
+    sliderTarget = currentActiveIndex
+    sliderTarget = sliderTarget === LAST_ELEM_INDEX ? 0 : sliderTarget + 1
+    sliderResponse(sliderTarget)
+  }
+
+  // ==SETUP FUNCTIONS==
+
+  function initSliderPage() {
+    window.onresize = () => {
+      checkImageHeight()
+    }
+  }
+  initSliderPage()
+
+  // set up first slide
+  function initFirstSlide() {
+    document.querySelectorAll(SELECTOR_SLIDER_PAGERS)[0].classList.add('active')
+    const slideImageItems = document.querySelectorAll(
+      SELECTOR_SLIDER_IMAGES_ITEM
+    )
+    slideImageItems.forEach((elem) => {
+      elem.style.display = 'none'
+    })
+    slideImageItems[0].style.display = null
+  }
+  initFirstSlide()
+
+  // pager controls
+  function initPageControl() {
+    document
+      .querySelectorAll(SELECTOR_SLIDER_PAGERS)
+      .forEach((elem, currentIndex) => {
+        elem.addEventListener('click', () => {
+          if (!elem.classList.contains('active') && !animationOngoing) {
+            sliderTarget = currentIndex
+            sliderResponse(sliderTarget)
+            resetTiming()
+          }
+        })
+      })
+
+    // next/prev controls
+    document
+      .querySelector(SELECTOR_SLIDER_CONTROL_NEXT)
+      .addEventListener('click', () => {
+        if (!animationOngoing) {
+          const currentActiveElem = document.querySelector(
+            SELECTOR_SLIDER_PAGERS_ACTIVE
+          )
+          const currentActiveIndex = indexOf(
+            currentActiveElem.parentElement.children,
+            currentActiveElem
+          )
+          sliderTarget = currentActiveIndex
+          sliderTarget = sliderTarget === LAST_ELEM_INDEX ? 0 : sliderTarget + 1
+          sliderResponse(sliderTarget)
+          resetTiming()
+        }
+      })
+    document
+      .querySelector(SELECTOR_SLIDER_CONTROL_PREV)
+      .addEventListener('click', () => {
+        if (!animationOngoing) {
+          const currentActiveElem = document.querySelector(
+            SELECTOR_SLIDER_PAGERS_ACTIVE
+          )
+          const currentActiveIndex = indexOf(
+            currentActiveElem.parentElement.children,
+            currentActiveElem
+          )
+          sliderTarget = currentActiveIndex
+          sliderTarget = sliderTarget === 0 ? LAST_ELEM_INDEX : sliderTarget - 1
+          sliderResponse(sliderTarget)
+          resetTiming()
+        }
+      })
+  }
+  initPageControl()
+
+  // slider autoplay
+  let timingRun = setInterval(() => {
+    sliderTiming()
+  }, SLIDER_SPEED)
+
+  function resetTiming() {
+    clearInterval(timingRun)
+    timingRun = setInterval(() => {
+      sliderTiming()
+    }, SLIDER_SPEED)
+  }
+})()
+</script>
+<script>
+/*
+ * xs-school-mainpage.js
+ *
+ * Libraries in use:
+ *
+ * Click-switch Images:
+ *  https://codepen.io/CSharperMantle/pen/yLOrJQQ
+ *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle)
+ * Really simple non-jQuery slider:
+ *  https://codepen.io/CSharperMantle/pen/OJXLzVV
+ *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle) and Ben Wellby
+ * Animated D2303 Class Flag:
+ *  https://codepen.io/CSharperMantle/pen/MWeLxWY
+ *  MIT License. Copyright (c) Rong "Mantle" Bao (aka CSharperMantle)
+ * canvas-confetti:
+ *  https://github.com/catdad/canvas-confetti
+ *  ISC License. Copyright (c) 2020, Kiril Vatev
+ * lodash:
+ *  https://github.com/lodash/lodash/
+ *  MIT License. Copyright JS Foundation and other contributors <https://js.foundation/>
+ * gsap:
+ *  https://greensock.com
+ *  OTHER. Copyright 2020, GreenSock. All rights reserved. Subject to the terms at https://greensock.com/standard-license or for Club GreenSock members, the agreement issued with that membership.
+ */
+
+;(() => {
+  const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
+  const ELEMID_BUTTON_WELCOME_PRIDE = 'button-welcome-pride'
+  const ELEMID_CONFETTI_OVERLAY = 'canvas-confetti-overlay'
+  const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
+  const ELEMID_DIV_RANDNUM_RESULT = 'div-randnum-result'
+  const ELEMID_DIV_RAINBOW_LOADER = 'div-rainbow-loader'
+  const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
+  const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
+  const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
+  let isHiddenPanelShowing = false
+  let prideInterval = null
+
+  // click-switching images
+  function loadSwitchableImg() {
+    'use strict'
+    function refreshSwitch(s) {
+      const currentSwitch = s.dataset.switchCurrent
+
+      const switchAttrStr = 'switchSrc-' + currentSwitch
+      const currentSwitchSrc = s.dataset[switchAttrStr]
+
+      s.setAttribute('src', currentSwitchSrc)
+    }
+
+    function switchNext(s) {
+      let currentSwitch = parseInt(s.dataset.switchCurrent, 10)
+      const switchCases = parseInt(s.dataset.switchCases, 10)
+
+      currentSwitch += 1
+      if (currentSwitch >= switchCases) {
+        currentSwitch = 0
+      }
+
+      s.dataset.switchCurrent = currentSwitch
+    }
+
+    function initializeSwitch() {
+      const switchables = document.getElementsByClassName('switchable')
+      for (let i = 0; i < switchables.length; i += 1) {
+        const switchable = switchables[i]
+        refreshSwitch(switchable)
+        switchable.addEventListener('click', () => {
+          switchNext(switchable)
+          refreshSwitch(switchable)
+        })
+      }
+    }
+    initializeSwitch()
+  }
+
+  // gsap animation
+  function loadDropper() {
+    // confetti helpers
+    const confettiCount = 200
+    const confettiDefaults = {
+      origin: { y: 0.7 }
+    }
+
+    function fireConfetti(instance, particleRatio, opts) {
+      instance(
+        Object.assign({}, confettiDefaults, opts, {
+          particleCount: _.floor(confettiCount * particleRatio)
+        })
+      )
+    }
+
+    // gsap helpers
+    const select = (s) => document.querySelector(s)
+    const mainSVG = select('.mainSVG')
+    const liquid = select('#liquid')
+    const flask = select('#flask')
+    const confettiCanvas = select('#canvas-dropper-confetti')
+    const pointArray = []
+    const pointValueXArray = []
+    const pointValueYArray = []
+    const liquidWidth = 200
+    const numPoints = 20
+    const dripOffset = 0.0258
+    const rippleAmount = '+=6'
+    let startValX = 63
+    const startValY = 115
+    const colorArray = [
+      '#E6098B',
+      '#FFBE0B',
+      '#FB5607',
+      '#8338EC',
+      '#3A86FF',
+      '#51E5FF',
+      '#04A777',
+      '#F75C03',
+      '#F71735'
+    ]
+
+    gsap.set(mainSVG, {
+      visibility: 'visible'
+    })
+    for (let i = 0; i < numPoints; i++) {
+      const p = liquid.points.appendItem(mainSVG.createSVGPoint())
+      pointArray.push(p)
+      pointValueXArray.push(
+        i < numPoints - 2 ? startValX : i === numPoints - 2 ? 600 : 200
+      )
+      startValX += liquidWidth / (numPoints - 2)
+      pointValueYArray.push(i < numPoints - 2 ? startValY : 800)
+    }
+
+    gsap.set(pointArray, {
+      x: gsap.utils.wrap(pointValueXArray),
+      y: gsap.utils.wrap(pointValueYArray)
+    })
+
+    // confetti
+    const confettiInstance = confetti.create(confettiCanvas, {
+      resize: true,
+      useWorker: true
+    })
+
+    const createFlaskConfettiEffect = _.throttle(() => {
+      fireConfetti(confettiInstance, 0.25, {
+        spread: 26,
+        startVelocity: 30
+      })
+      fireConfetti(confettiInstance, 0.2, {
+        spread: 60,
+        startVelocity: 35
+      })
+      fireConfetti(confettiInstance, 0.35, {
+        spread: 100,
+        decay: 0.91,
+        scalar: 0.8,
+        startVelocity: 40
+      })
+      fireConfetti(confettiInstance, 0.1, {
+        spread: 120,
+        startVelocity: 15,
+        decay: 0.92,
+        scalar: 1.2
+      })
+      fireConfetti(confettiInstance, 0.1, {
+        spread: 120,
+        startVelocity: 40
+      })
+    }, 500)
+
+    flask.addEventListener('click', () => {
+      createFlaskConfettiEffect()
+    })
+  }
+
+  function loadHiddenPanel() {
+    'use strict'
+
+    document
+      .getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION)
+      .addEventListener('click', () => {
+        const hiddenPanelElem = document.getElementById(ELEMID_DIV_HIDDEN_PANEL)
+        if (isHiddenPanelShowing) {
+          // hide
+          hiddenPanelElem.style.display = 'none'
+          isHiddenPanelShowing = false
+        } else {
+          // show
+          hiddenPanelElem.style.display = 'grid'
+          isHiddenPanelShowing = true
+        }
+      })
+
+    document
+      .getElementById(ELEMID_BUTTON_WELCOME_PRIDE)
+      .addEventListener('click', switchConfettiPride)
+  }
+
+  function loadUtilities() {
+    // random number generator
+    document
+      .getElementById(ELEMID_BUTTON_RANDNUM_GENERATE)
+      .addEventListener('click', () => {
+        const startNum = document.getElementById(
+          ELEMID_INPUT_RANDNUM_START_NUM
+        ).value
+        const endNum = document.getElementById(
+          ELEMID_INPUT_RANDNUM_END_NUM
+        ).value
+        document.getElementById(ELEMID_DIV_RANDNUM_RESULT).innerText = _.random(
+          startNum,
+          endNum,
+          false
+        )
+      })
+  }
+
+  function switchConfettiPride() {
+    const canvas = document.getElementById(ELEMID_CONFETTI_OVERLAY)
+    canvas.confetti =
+      canvas.confetti || confetti.create(canvas, { resize: true })
+
+    const colors = ['#bb0000', '#ffffff']
+    if (!_.isNull(prideInterval)) {
+      clearInterval(prideInterval)
+      prideInterval = null
+    } else {
+      prideInterval = setInterval(() => {
+        canvas.confetti({
+          particleCount: 2,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: colors
+        })
+        canvas.confetti({
+          particleCount: 2,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: colors
+        })
+      }, 10)
+    }
+  }
+
+  function initializeComponents() {
+    loadDropper()
+    loadSwitchableImg()
+    loadHiddenPanel()
+    loadUtilities()
+    // Hide the loader because we have finished loading
+    document.getElementById(ELEMID_DIV_RAINBOW_LOADER).style.visibility =
+      'collapse'
+  }
+
+  ;(() => {
+    initializeComponents()
+  })()
+})()
+
+</script>

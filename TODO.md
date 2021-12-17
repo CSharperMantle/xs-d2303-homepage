@@ -1,9 +1,10 @@
 Resources:
 - [x] lodash (JS)
 - [x] GSAP (JS)
-- [ ] confetti (JS)
+- [x] confetti (JS)
 - [ ] rainbow-loader (CSS)
 - [ ] ChemDoodle (CSS & JS)
 - [ ] fortune (TXT)
-- [ ] REEJI JINGGANG BOLD (TTF)
-- [ ] NotoEmoji (TTF)
+- [x] REEJI JINGGANG BOLD (TTF)
+- [x] NotoEmoji (TTF)
+- [ ] non-jquery-sliders (CSS & JS)

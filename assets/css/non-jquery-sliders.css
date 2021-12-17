@@ -1,0 +1,108 @@
+/**
+ * Copyright (c) 2021 by Rong "Mantle" Bao (https://codepen.io/CSharperMantle/pen/OJXLzVV)
+
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this
+ * software and associated documentation files (the "Software"), to deal in the Software
+ * without restriction, including without limitation the rights to use, copy, modify,
+ * merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit
+ * persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ * The above copyright notice and this permission notice shall be included in all copies or
+ * substantial portions of the Software.
+
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+ * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ */
+ 
+.slider {
+    max-width: 800px;
+    margin: 30px auto 0;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slider__images {
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    list-style-type: none;
+    -webkit-transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+    transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+}
+
+.slider__images.loaded {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slider__images-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.no-js .slider__images-item:first-of-type {
+    position: relative;
+}
+
+.no-js .slider__images-item:not(:first-of-type) {
+    display: none !important;
+}
+
+.slider__images-image {
+    display: block;
+}
+
+.slider__controls {
+    margin-top: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+
+.slider__control {
+    display: inline-block;
+    color: #829995;
+    cursor: pointer;
+}
+
+.slider__control--prev {
+    margin-right: 10px;
+    border-radius: 3px;
+    color: #333;
+}
+
+.slider__control--next {
+    margin-left: 10px;
+    border-radius: 3px;
+    color: #333;
+}
+
+.slider__pagers {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.slider__pagers button {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #829995;
+    border-radius: 3px;
+    padding: 0 10px;
+}
+
+.slider__pagers button.active {
+    color: #333;
+}
