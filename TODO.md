@@ -3,8 +3,9 @@ Resources:
 - [x] GSAP (JS)
 - [x] confetti (JS)
 - [ ] rainbow-loader (CSS)
-- [ ] ChemDoodle (CSS & JS)
+- [x] ChemDoodle (CSS & JS)
 - [ ] fortune (TXT)
-- [x] REEJI JINGGANG BOLD (TTF)
+- [x] ~~REEJI JINGGANG BOLD (TTF)~~ **Deprecated**
 - [x] NotoEmoji (TTF)
-- [ ] non-jquery-sliders (CSS & JS)
+- [x] non-jquery-sliders (CSS & JS)
+- [x] Matter.js (JS)

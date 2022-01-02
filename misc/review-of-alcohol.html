@@ -1,0 +1,154 @@
+<style>
+.no-selection {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto !important;
+}
+
+.bordered-with-fieldset>fieldset {
+    border-color: #000000;
+}
+
+.bordered-with-fieldset>fieldset>legend {
+    font-size: 14pt;
+}
+
+img.img-grayscale-on-hover {
+    filter: unset;
+    transition: filter 0.2s linear;
+}
+
+img.img-grayscale-on-hover:hover {
+    filter: grayscale(1);
+}
+
+img.img-deblur-on-hover {
+    filter: blur(1rem);
+    transition: filter 0.2s linear;
+}
+
+img.img-deblur-on-hover:hover {
+    filter: unset;
+}
+
+img.img-brighter {
+    filter: brightness(1.3);
+}
+
+/* These are for grids */
+.container-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-rows: min-content;
+    grid-auto-columns: min-content;
+}
+
+.grid-row-1 {
+    grid-row: 1;
+}
+
+.grid-row-2 {
+    grid-row: 2;
+}
+
+.grid-row-3 {
+    grid-row: 3;
+}
+
+.grid-row-4 {
+    grid-row: 4;
+}
+
+.grid-row-5 {
+    grid-row: 5;
+}
+
+.grid-row-stretch {
+    grid-column: 1 / -1;
+}
+
+/* These are for flexbox modeling */
+.container-flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container-flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container-flex-column {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+/* These are for better image display */
+figure.gallery-fig {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    margin: auto;
+}
+
+figure.gallery-fig>figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+/* Text */
+.text {
+    font-family: 'Noto Sans', Arial, Helvetica, 'Noto Sans SC', 'Microsoft YaHei', 'Noto Emoji', sans-serif;
+}
+
+.text-small {
+    font-size: small;
+}
+
+.text-large {
+    font-size: large;
+}
+
+</style>
+<style>
+.container-grid-one-column {
+  grid-template-columns: repeat(1, 1fr);
+}
+</style>
+
+<main>
+  <article class="container-grid container-grid-one-column">
+    <h1 class="grid-row-1 center text">综述：乙醇的声学特性</h1>
+    <section class="grid-row-2 container-flex-column">
+      <h2 class="center text">摘要</h2>
+      <p class="text">乙醇是现代工业重要产品之一，用途广泛，可用于制造醋酸、饮料、香精、染料、燃料等. 医疗上也常用体积分数为70%~75%的乙醇作消毒剂. 在国防化工、医疗卫生、食品工业、工农业生产中，乙醇都有广泛的用途. 目前关于乙醇的研究大多基于其化学性质，对其物理性质研究较少. 本文主要针对先前的《乙醇的声学特性》等多项研究进行学科交叉讨论，并在人类行为学和教育学方面对乙醇声学特性的应用进行了抛砖引玉式的探讨... <a href="#">[Read more]</a></p>
+    </section>
+    <div id="div-teachers" class="bordered-with-fieldset grid-row-3 grid-row-stretch">
+      <fieldset>
+        <legend><strong>获得全文</strong></legend>
+        <p class="center text">您还没有登录. <a href="#">登录</a>或<a href="#">注册</a>，获取免费下载机会！</p>
+      </fieldset>
+    </div>
+    <section class="grid-row-4 container-flex-column">
+      <h2 class="center text">图文资料</h2>
+      <p class="text"><i>音频4-5.</i> 一名研究对象在提及乙醇后表达出了强烈的情感.</p>
+      <audio class="center" controls="" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/duomeiti/202111/20211127223044332.mp3"></audio>
+      <p class="text"><i>音频4-6.</i> 经过处理后的音频4-6. <i>(Courtesy of Dr. H. Han)</i></p>
+      <audio class="center" controls="" src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/duomeiti/202111/20211127224512666.mp3"></audio>
+    </section>
+    <section class="grid-row-5 container-flex-column">
+      <h2 class="center text">致谢</h2>
+      <p class="text">本文的出版很大程度上归因于各方的大力支持. 宁波效实中学的徐珑迪提供了本文中出现的多项多媒体资料. 宁波效实中学的陈麒峰提供了多项帮助服务. 没有他们，本文将不可能成功. 还有很多各界人士对本文的成稿提供了帮助，谨此向他们表达感谢.</p>
+    </section>
+  </article>
+</main>

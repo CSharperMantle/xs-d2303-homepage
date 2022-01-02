@@ -1,0 +1,739 @@
+<link href="/js/D2303/non-jquery-sliders.css" rel="stylesheet">
+<link href="/js/D2303/ChemDoodleWeb.css" rel="stylesheet">
+<style>
+  .rainbow-loader {
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 99999
+  }
+
+  .rainbow-loader-inner {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px
+  }
+
+  .rainbow-loader-line-wrap {
+    animation: rainbow-spin 2s cubic-bezier(.175, .885, .32, 1.275) infinite;
+    box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 100%;
+    width: 100px
+  }
+
+  .rainbow-loader-line {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px
+  }
+
+  .rainbow-loader-line-wrap:nth-child(1) {
+    animation-delay: -50ms
+  }
+
+  .rainbow-loader-line-wrap:nth-child(2) {
+    animation-delay: -.1s
+  }
+
+  .rainbow-loader-line-wrap:nth-child(3) {
+    animation-delay: -150ms
+  }
+
+  .rainbow-loader-line-wrap:nth-child(4) {
+    animation-delay: -.2s
+  }
+
+  .rainbow-loader-line-wrap:nth-child(5) {
+    animation-delay: -250ms
+  }
+
+  .rainbow-loader-line-wrap:nth-child(1) .rainbow-loader-line {
+    border-color: #ea4747;
+    height: 90px;
+    width: 90px;
+    top: 7px
+  }
+
+  .rainbow-loader-line-wrap:nth-child(2) .rainbow-loader-line {
+    border-color: #eaea47;
+    height: 76px;
+    width: 76px;
+    top: 14px
+  }
+
+  .rainbow-loader-line-wrap:nth-child(3) .rainbow-loader-line {
+    border-color: #47ea47;
+    height: 62px;
+    width: 62px;
+    top: 21px
+  }
+
+  .rainbow-loader-line-wrap:nth-child(4) .rainbow-loader-line {
+    border-color: #47eaea;
+    height: 48px;
+    width: 48px;
+    top: 28px
+  }
+
+  .rainbow-loader-line-wrap:nth-child(5) .rainbow-loader-line {
+    border-color: #4747ea;
+    height: 34px;
+    width: 34px;
+    top: 35px
+  }
+
+  @keyframes rainbow-spin {
+
+    0%,
+    15% {
+      transform: rotate(0)
+    }
+
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+</style>
+<style>
+  @font-face {
+    font-family: 'Noto Emoji';
+    src: url('/font/D2303/NotoEmoji.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .no-selection {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .center {
+    text-align: center;
+    margin: 0 auto !important;
+  }
+
+  .bordered-with-fieldset>fieldset {
+    border-color: #000000;
+  }
+
+  .bordered-with-fieldset>fieldset>legend {
+    font-size: 14pt;
+  }
+
+  img.img-grayscale-on-hover {
+    filter: unset;
+    transition: filter 0.2s linear;
+  }
+
+  img.img-grayscale-on-hover:hover {
+    filter: grayscale(1);
+  }
+
+  img.img-deblur-on-hover {
+    filter: blur(1rem);
+    transition: filter 0.2s linear;
+  }
+
+  img.img-deblur-on-hover:hover {
+    filter: unset;
+  }
+
+  img.img-brighter {
+    filter: brightness(1.3);
+  }
+
+  /* These are for grids */
+  .container-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-rows: min-content;
+    grid-auto-columns: min-content;
+  }
+
+  .grid-row-1 {
+    grid-row: 1;
+  }
+
+  .grid-row-2 {
+    grid-row: 2;
+  }
+
+  .grid-row-3 {
+    grid-row: 3;
+  }
+
+  .grid-row-4 {
+    grid-row: 4;
+  }
+
+  .grid-row-5 {
+    grid-row: 5;
+  }
+
+  .grid-row-stretch {
+    grid-column: 1 / -1;
+  }
+
+  /* These are for flexbox modeling */
+  .container-flex {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .container-flex-row {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .container-flex-column {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  /* These are for better image display */
+  figure.gallery-fig {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    margin: auto;
+  }
+
+  figure.gallery-fig>figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+  }
+
+  /* Text */
+  .text {
+    font-family: 'Noto Sans', Arial, Helvetica, 'Noto Sans SC', 'Microsoft YaHei', 'Noto Emoji', sans-serif;
+  }
+
+  .text-small {
+    font-size: small;
+  }
+
+  .text-large {
+    font-size: large;
+  }
+</style>
+<style>
+  .grid-row-6 {
+    grid-row: 6;
+  }
+
+  .container-grid-two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #main-main {
+    position: relative;
+  }
+
+  #div-under-construction-banner {
+    padding: 25px 20px 10px 20px;
+    background: #f1f1f1;
+  }
+
+  #div-under-construction-cap>h2 {
+    font-family: 'Source Sans Pro';
+    font-weight: normal;
+    font-size: x-large;
+    color: rgb(102, 102, 102);
+  }
+
+  #img-barrier {
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #DEDCDB;
+  }
+
+  #span-random-quote {
+    display: block;
+    margin: 5px 0 0 0;
+    word-break: break-word;
+    font-size: 1.5em;
+    font-family: Georgia, serif;
+    color: #000;
+  }
+
+  #div-dropper-container {
+    background-color: var(--bg-color);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+  }
+
+  #div-dropper-container>svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  #canvas-dropper-confetti {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* random number generator */
+  #div-randnum-wrapper {
+    background-color: #c6eae3;
+    padding: 10px;
+  }
+
+  #div-randnum-result {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+  }
+
+  #form-randnum-control-wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  #form-randnum-control-wrapper>button {
+    border-radius: 5px;
+  }
+
+  #div-hidden-panel {
+    display: none;
+    /* display: grid; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: max-content;
+    gap: 10%;
+    width: 600px;
+    border: 2px solid gray;
+    padding: 15px;
+  }
+
+  #div-hidden-panel>* {
+    box-sizing: border-box;
+  }
+
+  .confetti-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+</style>
+
+<main role="main" id="main-main">
+  <canvas id="canvas-confetti-overlay" class="confetti-overlay"></canvas>
+  <div class="container-grid container-grid-two-columns">
+    <div id="div-under-construction-banner" class="no-selection grid-row-1 grid-row-stretch">
+      <figure class="center" id="figure-under-construction">
+        <svg width="150" height="150" version="1.1" viewBox="0 0 500.00001 500.00001"
+          xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="500" fill-opacity="0" />
+          <circle cx="250" cy="242.86" r="169.19" fill="#62c16c" />
+          <path d="m189.93 250 38.636 38.636 104.41-104.41" fill="none" stroke="#fff" stroke-linecap="square"
+            stroke-width="38.923" />
+          <circle cx="250" cy="236.43" r="169.19" fill="#6ce679" />
+          <path
+            d="m354.08 184.22-41.285-7.7617-90.652 90.654-24.875-24.875-41.285 7.7617v6l13.762 13.762 52.396 52.396 118.18-118.18 13.762-13.762z"
+            color="#000000" color-rendering="auto" fill="#e9e9e9" fill-rule="evenodd" image-rendering="auto"
+            shape-rendering="auto" solid-color="#000000"
+            style="block-progression:tb;isolation:auto;mix-blend-mode:normal;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-transform:none;white-space:normal" />
+          <path
+            d="m326.56 156.7-13.762 13.762-90.652 90.654-24.875-24.875l-13.762-13.762-27.523 27.523 13.762 13.762 52.396 52.396 118.18-118.18 13.762-13.762-27.523-27.523z"
+            color="#000000" color-rendering="auto" fill="#fff" fill-rule="evenodd" image-rendering="auto"
+            shape-rendering="auto" solid-color="#000000"
+            style="block-progression:tb;isolation:auto;mix-blend-mode:normal;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-transform:none;white-space:normal" />
+        </svg>
+      </figure>
+      <div id="div-under-construction-cap" class="center">
+        <h2 class="text">Migrating.</h2>
+        <span id="span-random-quote">To load or not to load is a question.<br>-- WebKit</span>
+      </div>
+      <span class="center">
+        <div id="div-hidden-panel" class="center">
+          <button id="button-airplane" disabled=""><span class="text center text-large">📄✈</span></button>
+          <button id="button-welcome-pride"><span class="text center text-large">🎉</span></button>
+          <button id="button-atom-viewer" disabled=""><span class="text center text-large">🔍</span></button>
+          <button id="button-refresh-fortune" disabled=""><span class="text center text-large">💡</span></button>
+          <button id="button-periotris" disabled=""><span class="text center text-large">XLD&apos;s
+              approval</span></button>
+          <button disabled=""><span class="text center text-large">Coming soon</span></button>
+        </div>
+        <div id="div-feature-wrapper" class="container-flex-column center">
+        </div>
+    </div>
+    <div id="div-class-banner" class="grid-row-2 grid-row-stretch">
+      <div id="div-dropper-container">
+        <div class="rainbow-loader" id="div-rainbow-loader">
+          <div class="rainbow-loader-inner">
+            <div class="rainbow-loader-line-wrap">
+              <div class="rainbow-loader-line"></div>
+            </div>
+            <div class="rainbow-loader-line-wrap">
+              <div class="rainbow-loader-line"></div>
+            </div>
+            <div class="rainbow-loader-line-wrap">
+              <div class="rainbow-loader-line"></div>
+            </div>
+            <div class="rainbow-loader-line-wrap">
+              <div class="rainbow-loader-line"></div>
+            </div>
+            <div class="rainbow-loader-line-wrap">
+              <div class="rainbow-loader-line"></div>
+            </div>
+          </div>
+        </div>
+        <canvas id="canvas-dropper-confetti"></canvas>
+        <svg id="svg-mainSVG" class="mainSVG" width="1280" height="800" version="1.1" viewBox="0 0 338.667 211.667"
+          xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="filter1481" x="-5.08652e-6" y="-4.54404e-6" width="1.00001" height="1.00001"
+              color-interpolation-filters="sRGB">
+              <feGaussianBlur stdDeviation="0.00080043971" />
+            </filter>
+          </defs>
+          <g>
+            <rect id="rect-top" y="10.5833" width="338.667" height="6.61458" fill="#2d76e7" fill-opacity=".839216"
+              fill-rule="evenodd" stroke-width=".264583" />
+            <rect id="rect-bottom" y="194.469" width="338.667" height="6.61458" fill="#2d76e7" fill-rule="evenodd"
+              stroke-width=".264583" />
+            <path id="path-mid"
+              d="m0.217619 98.5403v-37.2307h338.289v74.4613h-105.455v-10.3966l-23.8125-27.7685v-26.4688h-82.3988v26.3973l-11.9062 13.89-11.9062 13.89v10.4566h-102.81z"
+              fill="#2d76e7" stroke-width=".377976" />
+            <g id="flask">
+              <path id="path-flask-border" transform="scale(.264583)"
+                d="m389.972 594.21c1.67912-2.17271 36.7869-46.9188 78.0172-99.4357l74.9643-95.4853v-280.671h184.122v280.713l77.2901 99.0856c42.5095 54.4971 77.2901 99.2336 77.2901 99.4145s-111.316 0.32891-247.368 0.32891h-247.368zm440.043-24.143c-0.12595-0.33684-28.5945-35.5024-63.2634-78.1457l-63.0344-77.5333v-268.289h-136.718v268.683l-58.9122 76.7035c-32.4017 42.1869-59.3162 77.2638-59.81 77.9487-0.86617 1.2014 5.83361 1.24518 190.534 1.24518 111.793 0 191.337-0.25478 191.203-0.61244z"
+                fill="#2d76e7" />
+              <path id="path-flask-fill" transform="scale(.264583)"
+                d="m447.641 570.308c41.859-54.608 77.359-105.308 119.36-155.454v-268.691h136.756v268.044c46.243 55.7932 82.3385 102.096 126.86 156.101-134.917-8e-3 -271.117 0.392-382.976 0z"
+                fill="#c3c2ff" filter="url(#filter1481)" style="mix-blend-mode:normal" />
+            </g>
+            <path id="path-fg" transform="scale(.264583)" d="m385.673 493.528v-19.432h498.429v38.8639h-498.429z"
+              fill="#2d76e7" />
+            <g id="text-label" fill="#4b94fc" stroke-width=".264583"
+              style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal"
+              aria-label="D2303">
+              <path
+                d="m144.39 167.752-0.60961-0.97085h-3.09315v17.701h3.09315l0.60961-1.17405zm2.8448-2.46098 1.87396 2.6416v15.1723l-1.87396 2.84481h-11.2438v-20.6587z"
+                style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal" />
+              <path
+                d="m157.417 174.503v-7.54098h-6.18632v-1.44498h10.9502v10.4309h-6.14117v8.46668h6.36694v1.4224h-11.176v-11.3341z"
+                style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal" />
+              <path
+                d="m175.66 165.585v20.32h-11.0857v-1.4224h6.23148v-7.99254h-6.23148v-1.46756h6.23148v-7.96996h-6.23148v-1.46756z"
+                style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal" />
+              <path d="m182.704 184.392h1.73849v-17.4075h-1.73849zm-4.87681 1.44498v-20.32h11.2438v20.32z"
+                style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal" />
+              <path
+                d="m202.324 165.585v20.32h-11.0857v-1.4224h6.23148v-7.99254h-6.23148v-1.46756h6.23148v-7.96996h-6.23148v-1.46756z"
+                style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal" />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div id="div-teachers" class="bordered-with-fieldset grid-row-3 grid-row-stretch">
+      <fieldset>
+        <legend class="text"><strong>Our teachers</strong>&nbsp;教师风采</legend>
+        <article class="slider-wrapper">
+          <div class="slider">
+            <div class="js__slider__images slider__images">
+              <div class="slider__images-item"><img class="slider__images-image"
+                  src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114122534495.jpg"
+                  alt="石晓明 accepting a certificate"></div>
+              <div class="slider__images-item"><img class="slider__images-image"
+                  src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114122556671.jpg"
+                  alt="石晓明 giving a presentation"></div>
+              <div class="slider__images-item"><img class="slider__images-image"
+                  src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114122608333.jpg"
+                  alt="徐珑迪 playing basketball"></div>
+              <div class="slider__images-item"><img class="slider__images-image"
+                  src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114122616783.jpg"
+                  alt="徐珑迪 and 翁嘉诚 playing basketball"></div>
+              <div class="slider__images-item"><img class="slider__images-image"
+                  src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114122626646.jpg"
+                  alt="徐珑迪 with confidence"></div>
+              <div class="slider__images-item"><img class="slider__images-image"
+                  src="https://www.nbxiaoshi.net/WEB_Files/uploadfile/202111/20211114122635319.jpg" alt="郑文韶"></div>
+            </div>
+            <div class="slider__controls">
+              <button class="slider__control js__slider__control--prev slider__control--prev"
+                type="button">Prev</button>
+              <ol class="js__slider__pagers slider__pagers"></ol>
+              <button class="slider__control js__slider__control--next slider__control--next"
+                type="button">Next</button>
+            </div>
+          </div>
+        </article>
+      </fieldset>
+    </div>
+    <div class="bordered-with-fieldset grid-row-6 grid-row-stretch">
+      <fieldset>
+        <legend class="text"><strong>Utilities</strong>&nbsp;实用工具</legend>
+        <div id="div-randnum-wrapper" class="center">
+          <div id="div-randnum-result" class="center">0</div>
+          <form id="form-randnum-control-wrapper" class="center">
+            <div>
+              <label for="randnum-start-num" class="text">Start:</label>
+              <input type="number" id="input-randnum-start-num" name="randnum-start-num" value="1">
+            </div>
+            <div>
+              <label for="randnum-end-num" class="text">End:</label>
+              <input type="number" id="input-randnum-end-num" name="randnum-end-num" value="42">
+            </div>
+            <button type="button" id="button-randnum-generate" class="text">Random</button>
+          </form>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</main>
+
+<script src="/js/D2303/lodash-4.17.21.min.js"></script>
+<script src="/js/D2303/gsap-3.6.1.min.js"></script>
+<script src="/js/D2303/confetti.browser-1.3.2.js"></script>
+<script src="/js/D2303/matter-0.18.0.min.js"></script>
+<script src="/js/D2303/ChemDoodleWeb.js"></script>
+<script src="/js/D2303/non-jquery-sliders.js"></script>
+<script>
+  /*
+   * xs-school-mainpage.js
+   *
+   */
+
+  ; (() => {
+    const ELEMID_BUTTON_RANDNUM_GENERATE = 'button-randnum-generate'
+    const ELEMID_BUTTON_WELCOME_PRIDE = 'button-welcome-pride'
+    const ELEMID_CONFETTI_OVERLAY = 'canvas-confetti-overlay'
+    const ELEMID_DIV_HIDDEN_PANEL = 'div-hidden-panel'
+    const ELEMID_DIV_RANDNUM_RESULT = 'div-randnum-result'
+    const ELEMID_DIV_RAINBOW_LOADER = 'div-rainbow-loader'
+    const ELEMID_FIGURE_UNDER_CONSTRUCTION = 'figure-under-construction'
+    const ELEMID_INPUT_RANDNUM_END_NUM = 'input-randnum-end-num'
+    const ELEMID_INPUT_RANDNUM_START_NUM = 'input-randnum-start-num'
+    let isHiddenPanelShowing = false
+    let prideInterval = null
+
+    // click-switching images
+    function loadSwitchableImg() {
+      'use strict'
+      function refreshSwitch(s) {
+        const currentSwitch = s.dataset.switchCurrent
+
+        const switchAttrStr = 'switchSrc-' + currentSwitch
+        const currentSwitchSrc = s.dataset[switchAttrStr]
+
+        s.setAttribute('src', currentSwitchSrc)
+      }
+
+      function switchNext(s) {
+        let currentSwitch = parseInt(s.dataset.switchCurrent, 10)
+        const switchCases = parseInt(s.dataset.switchCases, 10)
+
+        currentSwitch += 1
+        if (currentSwitch >= switchCases) {
+          currentSwitch = 0
+        }
+
+        s.dataset.switchCurrent = currentSwitch
+      }
+
+      function initializeSwitch() {
+        const switchables = document.getElementsByClassName('switchable')
+        for (let i = 0; i < switchables.length; i += 1) {
+          const switchable = switchables[i]
+          refreshSwitch(switchable)
+          switchable.addEventListener('click', () => {
+            switchNext(switchable)
+            refreshSwitch(switchable)
+          })
+        }
+      }
+      initializeSwitch()
+    }
+
+    // gsap animation
+    function loadDropper() {
+      // confetti helpers
+      const confettiCount = 200
+      const confettiDefaults = {
+        origin: { y: 0.7 }
+      }
+
+      function fireConfetti(instance, particleRatio, opts) {
+        instance(
+          Object.assign({}, confettiDefaults, opts, {
+            particleCount: _.floor(confettiCount * particleRatio)
+          })
+        )
+      }
+      
+      const confettiCanvas = document.querySelector('#canvas-dropper-confetti')
+
+      // confetti
+      const confettiInstance = confetti.create(confettiCanvas, {
+        resize: true,
+        useWorker: true
+      })
+
+      const createFlaskConfettiEffect = _.throttle(() => {
+        fireConfetti(confettiInstance, 0.25, {
+          spread: 26,
+          startVelocity: 30
+        })
+        fireConfetti(confettiInstance, 0.2, {
+          spread: 60,
+          startVelocity: 35
+        })
+        fireConfetti(confettiInstance, 0.35, {
+          spread: 100,
+          decay: 0.91,
+          scalar: 0.8,
+          startVelocity: 40
+        })
+        fireConfetti(confettiInstance, 0.1, {
+          spread: 120,
+          startVelocity: 15,
+          decay: 0.92,
+          scalar: 1.2
+        })
+        fireConfetti(confettiInstance, 0.1, {
+          spread: 120,
+          startVelocity: 40
+        })
+      }, 500)
+
+      flask.addEventListener('click', () => {
+        createFlaskConfettiEffect()
+      })
+    }
+
+    function loadHiddenPanel() {
+      'use strict'
+
+      document
+        .getElementById(ELEMID_FIGURE_UNDER_CONSTRUCTION)
+        .addEventListener('click', () => {
+          const hiddenPanelElem = document.getElementById(ELEMID_DIV_HIDDEN_PANEL)
+          if (isHiddenPanelShowing) {
+            // hide
+            hiddenPanelElem.style.display = 'none'
+            isHiddenPanelShowing = false
+          } else {
+            // show
+            hiddenPanelElem.style.display = 'grid'
+            isHiddenPanelShowing = true
+          }
+        })
+
+      document
+        .getElementById(ELEMID_BUTTON_WELCOME_PRIDE)
+        .addEventListener('click', switchConfettiPride)
+    }
+
+    function loadUtilities() {
+      // random number generator
+      document
+        .getElementById(ELEMID_BUTTON_RANDNUM_GENERATE)
+        .addEventListener('click', () => {
+          const startNum = document.getElementById(
+            ELEMID_INPUT_RANDNUM_START_NUM
+          ).value
+          const endNum = document.getElementById(
+            ELEMID_INPUT_RANDNUM_END_NUM
+          ).value
+          document.getElementById(ELEMID_DIV_RANDNUM_RESULT).innerText = _.random(
+            startNum,
+            endNum,
+            false
+          )
+        })
+    }
+
+    function switchConfettiPride() {
+      const canvas = document.getElementById(ELEMID_CONFETTI_OVERLAY)
+      canvas.confetti =
+        canvas.confetti || confetti.create(canvas, { resize: true })
+
+      const colors = ['#bb0000', '#ffffff']
+      if (!_.isNull(prideInterval)) {
+        clearInterval(prideInterval)
+        prideInterval = null
+      } else {
+        prideInterval = setInterval(() => {
+          canvas.confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors
+          })
+          canvas.confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors
+          })
+        }, 10)
+      }
+    }
+
+    function initializeComponents() {
+      loadDropper()
+      loadSwitchableImg()
+      loadHiddenPanel()
+      loadUtilities()
+      // Hide the loader because we have finished loading
+      document.getElementById(ELEMID_DIV_RAINBOW_LOADER).style.visibility =
+        'collapse'
+    }
+
+    ; (() => {
+      initializeComponents()
+    })()
+  })()
+
+</script>
